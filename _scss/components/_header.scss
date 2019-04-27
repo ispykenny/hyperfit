@@ -60,7 +60,7 @@ header {
   }
 
   .hr {
-    margin:  1em auto 0.5em auto;
+    margin:  3em auto 0.5em auto;
   }
 
   p {
@@ -139,6 +139,10 @@ header {
     padding: 8em 0em 10em 0em;
   }
   .hdr-content__el {
+    .hr {
+      margin:  2em auto 0.5em auto;
+    }
+  
     max-width: 900px;
     h1 {
       font-size: 4em;

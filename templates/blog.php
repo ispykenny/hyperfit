@@ -20,6 +20,54 @@
 </header>
 
 
+<section>
+  <div class="inner">
+    <div class="featured-post">
+      <h2 class="featured-title">
+        Featured Post
+      </h2>
+      <div class="featured-grid">
+        <div class="main-blog">
+          <div class="card-full is-card">
+            <a href="">
+              <div class="card-full__element">
+                <div class="card-content-area">
+                  <h3>Blog Title Main</h3>
+                </div>
+                <div class="bg-el" data-bg-src="<?php echo "$root/dist/assets/images/hero.jpeg";?> "></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="additional-blog">
+          <div class="card-mini is-card">
+            <a href="">
+              <div class="card-mini__element">
+                <div class="card-content-area">
+                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, error.</h3>  
+                </div>
+                <div class="bg-el" data-bg-src="<?php echo "$root/dist/assets/images/hero.jpeg";?> "></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-mini is-card">
+            <a href="">
+              <div class="card-mini__element">
+                <div class="card-content-area">
+                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, error.</h3>  
+                </div>
+                <div class="bg-el" data-bg-src="<?php echo "$root/dist/assets/images/hero.jpeg";?> "></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+  </div>
+</section>
+
+
 <?php 
   get_footer();
 ?>
