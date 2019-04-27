@@ -1,5 +1,11 @@
 header {
   overflow: hidden;
+
+  &.standard-header {
+    .hdr-content {
+      padding: 5em 0em;
+    }
+  }
 }
 .hdr-content {
   padding: 4em 0em 8em 0em;
