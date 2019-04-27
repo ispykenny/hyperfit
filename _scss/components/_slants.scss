@@ -1,0 +1,29 @@
+.slant-top {
+  width: 50%;
+  position: absolute;
+  top: 50%; right: 0;
+  height: 50%;
+  background: $gray;
+  transform: skew(-20deg);
+  transform-origin: bottom right;
+}
+
+.slant-green {
+  background-image: $gradient;
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  transform-origin: top left;
+  width: 4%;
+    transform: skew(-5deg);
+
+  @media(min-width:1275px) {
+    width: 10%;
+    transform: skew(-10deg);
+  }
+
+  @media(min-width:1600px) {
+    width: 15%;
+    transform: skew(-15deg);
+  }
+}

@@ -1,0 +1,32 @@
+section {
+  background: white;
+}
+section .inner {
+  padding: 6em 0em;
+}
+.is-center {
+  text-align: center;
+}
+
+.has-max {
+  max-width: 890px;
+  margin: auto;
+}
+
+.hr {
+  display: inline-block;
+  height: 8px;
+  background-image: $gradient;
+  width: 160px;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 1.5em
+}
+
+.content-block {
+  h3 {
+    color: $darkGray;
+    font-size: 1.6em;
+    margin-bottom: 0.3em;
+  }
+}

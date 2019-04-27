@@ -1,0 +1,88 @@
+.three-card-block {
+  // display: flex;
+  text-align: center;
+  margin-top: 7em;
+  width: 100%;
+
+  .flickity-page-dots {
+    bottom: -2em;
+  }
+  .dot {
+   top: 2em;
+    background: $themegreen;
+    transition: transform 200ms ease;
+    &.is-selected {
+      transform: scale(2);
+    }
+  }
+}
+
+.three-card-block__element {
+  border: 1px solid #ddd;
+  background: white;
+  max-width: 600px;
+  width: 85%;
+  margin: auto;
+  position: relative;
+  margin-bottom: 6em;
+  margin-right: 5%;
+  &:last-of-type {
+    
+    margin-bottom: 0em;
+  }
+}
+.three-card-inner {
+  padding: 5em 3em 3em 3em;
+  
+
+  .cta {
+    margin-top: 2em;
+  }
+}
+
+.icon-nest {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  svg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    g {
+      stroke: $themegreen;
+    }
+  }
+}
+.three-card-block {
+  // display: flex;
+  
+  .flickity-viewport {
+    padding-top: 4em;
+  }
+}
+
+@media(min-width: $bp-lg) {
+  
+  .three-card-block {
+    // display: flex;
+    
+    .flickity-viewport {
+      padding-top: 4em;
+    }
+  }
+  
+  .three-card-block__element {
+    width: 30%;
+    margin-right: 4.5%;
+    margin-bottom: 0em;
+    &:last-of-type {
+      margin-bottom: 0em;
+    }
+  }
+}

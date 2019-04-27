@@ -1,0 +1,54 @@
+.cta {
+  background: $themegreen;
+  display: inline-block;
+  padding: 0.65em 2.3em;
+  color: white !important;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: background 200ms ease;
+  &.is-white {
+    background: white;
+    color: black !important;
+    &:hover {
+      color: $themegreen !important;
+      background: white ;
+    }
+  }
+  &:active {
+    top: 1px;
+  }
+  &:hover {
+    .text-current {
+      transform: translateY(-100%);
+    }
+    .text-new {
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    background-color: darken($themegreen, 5%)
+  }
+}
+.text {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.text-el {
+  transition: all 300ms $ease-out-quart;
+}
+.text-current {
+  position: relative;
+  display: inline-block;
+}
+.text-new {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
+}

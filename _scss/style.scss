@@ -1,0 +1,34 @@
+@import 'lib/flickity';
+@import 'lib/mixins';
+@import 'vars';
+@import 'settings';
+@import 'fonts';
+@import 'global';
+
+body {
+  background: #eee;
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+
+body::-webkit-scrollbar-thumb {
+background-color: $themegreen;
+outline: 1px solid $themegreen;
+}
+
+// == components
+@import 'components/nav';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/center-text';
+@import 'components/three-card-block';
+@import 'components/home-4-icon-section';
+@import 'components/home-manage-nums';
+@import 'components/news-letter';
+@import 'components/slants';
+@import 'components/cta';
