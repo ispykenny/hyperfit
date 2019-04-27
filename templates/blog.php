@@ -24,7 +24,7 @@
   <div class="inner">
     <div class="featured-post">
       <h2 class="featured-title">
-        Featured Post
+        Featured Posts
       </h2>
       <div class="featured-grid">
         <div class="main-blog">
@@ -58,12 +58,23 @@
                 </div>
                 <div class="bg-el" data-bg-src="<?php echo "$root/dist/assets/images/hero.jpeg";?> "></div>
               </div>
-            </a>
+            </a> 
           </div>
         </div>
       </div>
     </div>  
 
+  </div>
+  <div class="blog-featured-strip"></div>
+</section>
+
+<section>
+  <div class="inner">
+    <div class="featured-post">
+      <h2 class="featured-title">
+        Blog Posts
+      </h2>
+    </div>
   </div>
 </section>
 

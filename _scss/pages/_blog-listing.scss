@@ -62,6 +62,9 @@
   }
 
   &:hover {
+    h3 {
+      color: $themegreen;
+    }
     .bg-el {
       transform: scale(1.1);
     }
@@ -71,4 +74,41 @@
 
 .is-card {
   margin-bottom: 2em;
+}
+
+.blog-featured-strip {
+  position: absolute;
+  top: 0; right: 0;
+  width: 35%;
+  height: 100%;
+  background-image: $gradient;
+  transform: skew(35deg);
+  transform-origin: top right;
+}
+
+@media(min-width: $bp-md ){
+  .is-card {
+    margin-bottom: 0em;
+  }
+  .featured-grid {
+    display: flex;
+  }
+  
+  .main-blog {
+    width: 65.55%;
+    margin-right: 2.5%;
+  }
+  
+  .additional-blog {
+    width: 32%;
+    position: relative;
+  }
+
+  .card-mini {
+    &:first-of-type {
+      margin-bottom: 1em;
+    }
+  }
+  
+  
 }
