@@ -122,8 +122,72 @@
 
 
 
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
 
+article {
+  max-width: 1000px;
+  margin: auto;
+  img {
+    max-width: 100%;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: auto !important;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
 
+.shimmy-top {
+  .inner {
+    padding-top: 5em;
+  }
+}
+
+#social-share-parent {
+  padding: 0em;
+  margin: 0;
+}
+
+.social-share {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4em;
+}
+.cta-parent-social {
+  margin-top: 4em;
+  text-align: center;
+}
+
+#share-on {
+  font-weight: 700;
+  font-size: 22px;
+  color: $themegreen;
+}
+.social-share__el {
+  ul {
+    display: flex;
+    list-style-type: none;
+    li {
+      margin-right: 30px;
+      &:last-of-type {
+        margin-right: 0px;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
 
 @media(min-width: $bp-md ){
   .is-card {
