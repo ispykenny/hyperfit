@@ -1,6 +1,9 @@
 <?php /* Template Name: Blog Listing */ 
   $root = get_template_directory_uri();
   get_header();
+  $featureMain = get_field('featured_blog_post_main'); 
+  $featured2 = get_field('featured_blog_post_2');
+  $featured3 = get_field('featured_blog_post_3');
 ?>
 
 <header class="standard-header">
@@ -8,16 +11,17 @@
     <div class="hdr-content">
       <div class="hdr-content__el">
         <div class="hero-anime">
-          <h4>Our Blogs for You</h4>
-          <h1>General Content for you</h1>
+          <h4><?php the_field('hero_sub_title'); ?></h4>
+          <h1><?php the_field('hero_title'); ?></h1>
         </div>
         <div class="hr"></div>
-        <div class="hero-anime"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, id quia ex debitis doloremque harum architecto laudantium sit veritatis distinctio?</p></div>
+        <div class="hero-anime"><p><?php the_field('hero_blurb'); ?></p></div>
       </div>
     </div>
   </div>
-  <div class="bg-el par" data-bg-src="<?php echo "$root/dist/assets/images/hero.jpeg";?> "></div>
+  <div class="bg-el par" data-bg-src="<?php the_field('hero_background');?> "></div>
 </header>
+
 
 
 <section>
@@ -29,34 +33,34 @@
       <div class="featured-grid">
         <div class="main-blog">
           <div class="card-full is-card">
-            <a href="">
+            <a href="<?php the_permalink($featureMain->ID); ?>">
               <div class="card-full__element">
                 <div class="card-content-area">
-                  <h3>Blog Title Main</h3>
+                  <h3><?php echo $featureMain->post_title; ?></h3>
                 </div>
-                <div class="bg-el" data-bg-src="<?php echo "$root/dist/assets/images/hero.jpeg";?> "></div>
+                <div class="bg-el" data-bg-src="<?php the_field('featured_image', $featureMain->ID) ;?> "></div>
               </div>
             </a>
           </div>
         </div>
         <div class="additional-blog">
           <div class="card-mini is-card">
-            <a href="">
+            <a href="<?php the_permalink($featured2->ID); ?>">
               <div class="card-mini__element">
                 <div class="card-content-area">
-                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, error.</h3>  
+                  <h3><?php echo $featured2->post_title; ?></h3>  
                 </div>
-                <div class="bg-el" data-bg-src="<?php echo "$root/dist/assets/images/hero.jpeg";?> "></div>
+                <div class="bg-el" data-bg-src="<?php the_field('featured_image', $featured2->ID);?> "></div>
               </div>
             </a>
           </div>
           <div class="card-mini is-card">
-            <a href="">
+            <a href="<?php the_permalink($featured3->ID); ?>">
               <div class="card-mini__element">
                 <div class="card-content-area">
-                  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, error.</h3>  
+                  <h3><?php echo $featured3->post_title; ?></h3>  
                 </div>
-                <div class="bg-el" data-bg-src="<?php echo "$root/dist/assets/images/hero.jpeg";?> "></div>
+                <div class="bg-el" data-bg-src="<?php the_field('featured_image', $featured3->ID);?> "></div>
               </div>
             </a> 
           </div>
@@ -75,15 +79,20 @@
         Blog Posts
       </h2>
       <div class="added-blogs">
-        <?php for($i = 0; $i < 8; $i++) { ?>
+        <?php $postLoop = New WP_Query(array(
+          'post-type' => 'posts'
+        )); ?>
+
+        <?php if($postLoop->have_posts()) : while($postLoop->have_posts()) : $postLoop->the_post(); ?>
+        
           <div class="blog-item">
             <div class="blog-item__content">
-              <h3>Blog Title</h3>
+              <h3><?php the_title(); ?></h3>
               <div class="hr"></div>
               <div class="content-height">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, asperiores.</p>
+                <p><?php echo wp_trim_words( get_the_content(), 40, '...' ); ?></p>
               </div>
-              <a href="" class="cta">
+              <a href="<?php the_permalink();?>" class="cta">
                 <span class="text">
                   <span class="text-el text-current">
                     Read More
@@ -95,7 +104,9 @@
               </a>
             </div>
           </div>
-        <?php } ?>
+<?php endwhile;
+endif;
+wp_reset_postdata(); ?>
       </div>
     </div>
   </div>
