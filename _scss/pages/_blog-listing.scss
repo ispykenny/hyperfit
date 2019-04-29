@@ -189,6 +189,10 @@ article {
   }
 }
 
+#category-name {
+  color: white;
+}
+
 @media(min-width: $bp-md ){
   .is-card {
     margin-bottom: 0em;

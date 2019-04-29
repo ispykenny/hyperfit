@@ -1,5 +1,8 @@
 <?php $root = get_template_directory_uri(); ?>
-<?php get_header(); ?>
+<?php get_header(); 
+
+$newCatArr = [];
+?>
 
 <header class="standard-header">
   <div class="inner">
@@ -7,7 +10,14 @@
       <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
       <div class="hdr-content__el">
         <div class="hero-anime">
-          <h4><?php the_field('hero_sub_title'); ?></h4>
+          
+          <?php
+            $cat = get_the_category($post->ID);
+            $stringy = sizeof($cat) > 1 ? ", " : " ";
+            foreach($cat as $theCat) {
+            array_push($newCatArr, $theCat->name);
+           } ?>
+          <h4><span>Category:</span> <span id="category-name"><?php echo implode($stringy,$newCatArr); ?></span></h4>
           <h1><?php the_title(); ?></h1>
         </div>
         <div class="hr"></div>
