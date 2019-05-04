@@ -1,13 +1,7 @@
 section {
   background: white;
 }
-// section .inner {
-//   // padding: 6em 0em;
-//   padding: 6em 0em;
-//   &.drop-padd {
-//     padding: 6em 0em 0em 0em;
-//   }
-// }
+
 .is-center {
   text-align: center;
 }
@@ -23,8 +17,8 @@ section {
   background-image: $gradient;
   width: 160px;
   margin: auto;
-  margin-top: 3em;
-  margin-bottom: 1.5em
+  margin-top: 2em;
+  margin-bottom: 0.8em
 }
 
 .content-block {
