@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Starter Kit</title>
+	<title>Hyperfit MD</title>
 	<link rel="stylesheet" href="<?php echo "$root/dist/assets/css/style.css?=" ?>">
 	<meta name="viewport" content="Width=device-width, initial-scale=1, user-scalable=no">
 	<script src="https://use.fontawesome.com/1eda73ce4d.js"></script>
@@ -31,7 +31,7 @@
               </svg>
             </span>
           <span class="local-text">
-            88 Nobile Avenue, Suite 105 Millford, CT 06460
+            <?php the_field('address', 'options') ?>
           </span>
           <span class="local-text-trim mobile">
             Location
