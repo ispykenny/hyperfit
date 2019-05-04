@@ -1,5 +1,5 @@
 <section>
-	<div class="inner">
+	<div class="inner drop-padd">
 		<div class="has-max is-center content-block is-over hr-large-btm">
 			<h1 class="is-green">Recent News</h1>
 		</div>

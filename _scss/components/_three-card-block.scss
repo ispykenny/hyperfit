@@ -5,7 +5,8 @@
   width: 100%;
 
   .flickity-page-dots {
-    bottom: -2em;
+    bottom: 1em;
+    @media(min-width: $bp-lg) {bottom: -3.5em;}
   }
   .dot {
    top: 2em;
@@ -17,6 +18,9 @@
   }
 }
 
+.card-slider {
+  @media(min-width: $bp-lg) { padding-bottom: 3em; }
+}
 .three-card-block__element {
   border: 1px solid #ddd;
   background: white;

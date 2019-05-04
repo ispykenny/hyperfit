@@ -22,9 +22,23 @@
   position: absolute;
   bottom: 50px;
   width: 90%;
-  left: 5%;
+  left: 2em;
   z-index: 5;
   color: white;
+  h3 {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+  }
+  .hr {
+    max-width: 80px;
+  }
+}
+
+.content-blurb {
+  max-height: 85px;
+  overflow: hidden;
 }
 
 .card-mini__element {
@@ -66,7 +80,7 @@
   top: 0; right: 0;
   width: 35%;
   height: 100%;
-  background-image: $gradient;
+  background-color: $themegreen;
   transform: skew(35deg);
   transform-origin: top right;
 }
@@ -202,7 +216,7 @@ article {
   }
   
   .main-blog {
-    width: 65.55%;
+    width: 65.9%;
     margin-right: 2.5%;
   }
   

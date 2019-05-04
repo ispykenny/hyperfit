@@ -88,8 +88,8 @@
     </div>
     <div class="nav-section has-nav-el">
       <ul class="parent-nav">
-        <li><a href="">Home</a></li>
-        <li><a href="">Our Practice</a></li>
+        <li><a href="<?php echo site_url(''); ?>">Home</a></li>
+        <li><a href="<?php echo site_url('/our-practice'); ?>">Our Practice</a></li>
         <li class="has-dropdown"><a href="#0" class="dropdown-trigger">Services <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 6 7"><path d="M391.545,543l-3.511,6h7Z" transform="translate(549 -388.034) rotate(90)" fill="#87b840"/></svg></a>
 
           <ul class="child-nav">

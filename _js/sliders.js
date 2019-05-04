@@ -29,6 +29,8 @@ export default function() {
 
   $threeBlockParent.flickity({
     cellAlign: 'center',
-    wrapAround: true
+    wrapAround: true,
+    autoPlay: 3000,
+    pauseAutoPlayOnHover: false
   });
 }

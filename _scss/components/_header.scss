@@ -1,11 +1,5 @@
 header {
   overflow: hidden;
-
-  &.standard-header {
-    .hdr-content {
-      padding: 5em 0em;
-    }
-  }
 }
 .hdr-content {
   padding: 4em 0em 8em 0em;
@@ -96,8 +90,7 @@ header {
   bottom: 0; left: 0;
   width: 100%;
   height: 8%;
-  background-image: $gradient;
-  // @include gradient($themegreen, $darkthemegreen);
+  background-color: $themegreen;
   transform: skewY(-5deg);
   transform-origin: bottom right;
   transition: all 600ms ease;
@@ -116,7 +109,18 @@ header {
   transition: transform 600ms, opacity 600ms ease;
 }
 
+.hdr-content .hr {
+  width: 0px;
+  transition: all 300ms ease;
+  display: inline-block;
+}
+
 .site-loaded {
+  .hdr-content .hr {
+    transition-delay: 1s;
+    width: 140px;
+    transition: width 1300ms ease !important;
+  }
   .hero-anime {
     opacity: 1;
     transform: translateY(0px);

@@ -36,7 +36,8 @@
 	<div class="stripe"></div>
 </header>
 
-<section>
+<section class="card-slider">
+<div class="spacing spacing--lg"></div>
 	<div class="inner">
 		<div class="has-max is-center content-block">
 			<h3><?php the_field('second_section_subtitle'); ?></h3>
@@ -73,15 +74,15 @@
 			<?php } ?>
 		</div>
 	</div>
-	<div class="spacer-large"></div>
 	<div class="slant-top"></div>
+	<div class="spacing spacing--lg"></div>
 </section>
 
 <?php get_template_part('partials/our-practice'); ?>
 
 <section>
-	<div class="spacer-large"></div>
-	<div class="inner">
+	<div class="spacing spacing--lg"></div>
+	<div class="inner drop-padd">
 		<div class="manage-number">
 			<div class="image-column two-col-num">
 				<div class="image-nest">
@@ -111,6 +112,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="spacing spacing--lg"></div>
 </section>
 
 

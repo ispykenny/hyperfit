@@ -1,4 +1,5 @@
 <section>
+<div class="spacing spacing--md"></div>
 	<div class="inner">
 		<div class="form-signup">
 			<div class="is-center push-btm">
@@ -30,5 +31,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="spacer-large"></div>
+	<div class="spacing spacing--lg"></div>
 </section>

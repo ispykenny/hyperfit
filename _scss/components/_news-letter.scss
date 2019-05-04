@@ -4,7 +4,6 @@
 
 
 .form-nest {
-  // display: flex;
   align-items: center;
   justify-content: center;
 
@@ -29,7 +28,6 @@
   margin-bottom: 2em;
   li {
     float: left;
-    // margin-right: 1em;
     width: 25%;
     display: inline-block;
     &:last-of-type {
@@ -45,7 +43,6 @@
   }
   input[type="email"] {
     width: 80%;
-    // width: 200px;
     @media(min-width: $bp-sm ){
       width: 200px;
     }

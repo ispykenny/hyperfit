@@ -12,6 +12,8 @@
       <div class="hdr-content__el">
         <div class="hero-anime">
           <h4><?php the_field('hero_sub_title'); ?></h4>
+        </div>
+        <div class="hero-anime">
           <h1><?php the_field('hero_title'); ?></h1>
         </div>
         <div class="hr"></div>
@@ -20,11 +22,13 @@
     </div>
   </div>
   <div class="bg-el par" data-bg-src="<?php the_field('hero_background');?> "></div>
+  <div class="stripe"></div>
 </header>
 
 
 
 <section>
+<div class="spacing spacing--lg"></div>
   <div class="inner">
     <div class="featured-post">
       <h2 class="featured-title">
@@ -36,7 +40,11 @@
             <a href="<?php the_permalink($featureMain->ID); ?>">
               <div class="card-full__element">
                 <div class="card-content-area">
+                  <div class="hr"></div>
                   <h3><?php echo $featureMain->post_title; ?></h3>
+                  <div class="content-blurb">
+                    <p><?php echo wp_trim_words( $featureMain->post_content, 40, '...' ); ?></p>
+                  </div>
                 </div>
                 <div class="bg-el" data-bg-src="<?php the_field('featured_image', $featureMain->ID) ;?> "></div>
               </div>
@@ -48,6 +56,7 @@
             <a href="<?php the_permalink($featured2->ID); ?>">
               <div class="card-mini__element">
                 <div class="card-content-area">
+                  <div class="hr"></div>
                   <h3><?php echo $featured2->post_title; ?></h3>  
                 </div>
                 <div class="bg-el" data-bg-src="<?php the_field('featured_image', $featured2->ID);?> "></div>
@@ -58,6 +67,7 @@
             <a href="<?php the_permalink($featured3->ID); ?>">
               <div class="card-mini__element">
                 <div class="card-content-area">
+                  <div class="hr"></div>
                   <h3><?php echo $featured3->post_title; ?></h3>  
                 </div>
                 <div class="bg-el" data-bg-src="<?php the_field('featured_image', $featured3->ID);?> "></div>
@@ -73,6 +83,7 @@
 </section>
 
 <section>
+<div class="spacing spacing--lg"></div>
   <div class="inner">
     <div class="featured-post">
       <h2 class="featured-title">
@@ -113,6 +124,7 @@
     </div>
   </div>
   <div class="spacer-large"></div>
+  <div class="spacing spacing--lg"></div>
 </section>
 
 <?php get_template_part('partials/our-practice'); ?>

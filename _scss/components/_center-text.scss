@@ -1,9 +1,13 @@
 section {
   background: white;
 }
-section .inner {
-  padding: 6em 0em;
-}
+// section .inner {
+//   // padding: 6em 0em;
+//   padding: 6em 0em;
+//   &.drop-padd {
+//     padding: 6em 0em 0em 0em;
+//   }
+// }
 .is-center {
   text-align: center;
 }
