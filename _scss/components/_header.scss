@@ -143,11 +143,10 @@ header {
     padding: 8em 0em 10em 0em;
   }
   .hdr-content__el {
+    max-width: 550px;
     .hr {
       margin:  2em auto 0.5em auto;
     }
-  
-    max-width: 900px;
     h1 {
       font-size: 4em;
     }
@@ -170,7 +169,7 @@ header {
     padding: 10em 0em 12em 0em;
   }
   .hdr-content__el {
-    
+    max-width: 700px;
     h1 {
       font-size: 4.4em;
     }
