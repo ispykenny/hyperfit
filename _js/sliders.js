@@ -5,13 +5,22 @@ export default function() {
   let $mobileEl = $('.mt-trigger');
   let isMobile = null;
 
+  let $body = $('body');
+  let $blogSlide = $('.blog-slide-parent')
+  if($body.hasClass('page-template-home')) {
+    $blogSlide.flickity({
+      wrapAround: true,
+      prevNextButtons: false
+    });
+  }
+
   let checkMobile = () => {
     if($mobileEl.is(':visible')) {
       isMobile = true
     } else {
       isMobile = false;
     }
-    console.log(isMobile);
+    
   }
 
   checkMobile();
@@ -19,7 +28,7 @@ export default function() {
   
 
   $threeBlockParent.flickity({
-    cellAlign: isMobile ? 'center' : 'left',
+    cellAlign: 'center',
     wrapAround: true
   });
 }

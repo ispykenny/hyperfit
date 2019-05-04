@@ -12497,20 +12497,28 @@ exports.default = function () {
   var $mobileEl = $('.mt-trigger');
   var isMobile = null;
 
+  var $body = $('body');
+  var $blogSlide = $('.blog-slide-parent');
+  if ($body.hasClass('page-template-home')) {
+    $blogSlide.flickity({
+      wrapAround: true,
+      prevNextButtons: false
+    });
+  }
+
   var checkMobile = function checkMobile() {
     if ($mobileEl.is(':visible')) {
       isMobile = true;
     } else {
       isMobile = false;
     }
-    console.log(isMobile);
   };
 
   checkMobile();
   $(window).on('resize', checkMobile);
 
   $threeBlockParent.flickity({
-    cellAlign: isMobile ? 'center' : 'left',
+    cellAlign: 'center',
     wrapAround: true
   });
 };

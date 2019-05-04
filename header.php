@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Starter Kit</title>
+	<title>Hyperfit MD</title>
 	<link rel="stylesheet" href="<?php echo "$root/dist/assets/css/style.css?=" ?>">
 	<meta name="viewport" content="Width=device-width, initial-scale=1, user-scalable=no">
 	<script src="https://use.fontawesome.com/1eda73ce4d.js"></script>
@@ -21,7 +21,7 @@
       <div class="pre-nav-section">
         <div class="contact-flex">
           <div class="contact-flex__el location">
-            <a href="">
+            <a href="<?php the_field('address_link', 'options');?>">
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
                 <g id="pin_drop" transform="translate(-609.5 -3209.5)">
@@ -31,7 +31,7 @@
               </svg>
             </span>
           <span class="local-text">
-            88 Nobile Avenue, Suite 105 Millford, CT 06460
+            <?php the_field('address', 'options') ?>
           </span>
           <span class="local-text-trim mobile">
             Location
@@ -39,7 +39,7 @@
           </a>
           </div>
           <div class="contact-flex__el number">
-            <a href="">
+            <a href="tel:<?php the_field('phone_number', 'options'); ?>">
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <g id="stay_primary_portrait" transform="translate(-338 -1304)">
@@ -48,7 +48,7 @@
                 </g>
               </svg>
               <span class="local-text">
-                203.890.9777
+                <?php the_field('phone_number', 'options'); ?>
               </span>
               <span class="local-text-trim mobile">
                 Call Today
@@ -76,8 +76,8 @@
   </div>
   <div class="inner">
     <div class="nav-section">
-      <a href="" class="logo">
-        <img src="https://hyperfitmd.com/wp-content/themes/hyperfit/images/logo.png" alt="">
+      <a href="<?php echo site_url('');?>" class="logo">
+        <img src="<?php the_field('logo', 'options') ?>" alt="">
       </a>
       <button class="mt-trigger">
         <span class="hamburger sr-only">Menu</span>

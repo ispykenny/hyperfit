@@ -49,7 +49,11 @@ footer {
   align-items: center;
   
   li {
-    width: 25%;
+    width: 20%;
+    margin-right: (20% / 4);
+    &:last-of-type {
+      margin-right: 0em;
+    }
   }
 
 }

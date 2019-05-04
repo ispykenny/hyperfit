@@ -1,61 +1,107 @@
 .push-btm {
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
 }
-.form-signup {
+
+
+.form-nest {
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__el:first-of-type {
+    margin-right: 2em;
+  }
   form {
     width: 100%;
     max-width: 300px;
     margin: auto;
   }
-  .form-el {
-    position: relative;
-  }
-  .el-nest {
-    position: relative;
-  }
+}
 
-  input[type="email"] {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-    z-index: 6;
-    background: none;
-    outline: none;
-    font-size: 1em;
-    border-radius: 0px;
-    &:focus {
-     + label {
-        transform: translateY(-150%);
-      }
-      border-bottom: 1px solid $themegreen;
+
+.form-sl_el {
+  list-style-type: none;
+  margin: 0; padding: 0;
+  @include clearfix();
+  max-width: 300px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 2em;
+  li {
+    float: left;
+    // margin-right: 1em;
+    width: 25%;
+    display: inline-block;
+    &:last-of-type {
+      margin-right: 0em;
     }
   }
-
-  .form-el label {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 100ms ease;
-    left: 0;
-    color: #999;
-  }
-
-
 }
 
-.has-btn-form {
-  @include btn-reset();
-  font-size: 1em;
-  display: inline-block;
-  margin-top: 15px;
-  button {
-    border: none;
-    font-size: 1em;
+.form-input {
+  display: flex;
+  input {
+    height: 40px;
+  }
+  input[type="email"] {
+    width: 80%;
+    // width: 200px;
+    @media(min-width: $bp-sm ){
+      width: 200px;
+    }
+    border: 1px solid #ddd;
+    border-right: none;
+    outline: none;
+    border-radius: 0px;
+    padding-left: 1em;
+    font-size: 0.7em;
+    font-weight: 500;
+
+    &::placeholder {
+      position: relative;
+      display: inline-block;
+      color: black;
+    }
+  }
+  input[type="submit"] {
+    @include btn-reset();
+    background: $themegreen;
+    min-width: 20%;
+    height: 44px;
+    padding: 0em 3em 0em 2em;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    font-weight: 700;
   }
 }
 
-.spacer-large {
-  padding-bottom: 6em;
+@media(min-width: $bp-sm ) { 
+  .form-nest {
+    display: flex;
 
+    &__el:first-of-type {
+      margin-right: 2em;
+    }
+    form {
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+    }
+  }
+  .form-sl_el {
+    max-width: auto;
+    text-align: left;
+    margin-bottom: 0em;
+    display: inline-block;
+    li {
+      margin-right: 1em;
+      width: auto;
+      display: inline-block;
+      margin-bottom: 0em;
+      margin-top: 10px;
+      &:last-of-type {
+        margin-right: 0em;
+      }
+    }
+  }
 }

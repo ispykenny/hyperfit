@@ -104,110 +104,20 @@
               </a>
             </div>
           </div>
-<?php endwhile;
-endif;
-wp_reset_postdata(); ?>
+          <?php 
+            endwhile;
+            endif;
+            wp_reset_postdata();
+          ?>
       </div>
     </div>
   </div>
   <div class="spacer-large"></div>
 </section>
 
-<section>
-  <div class="inner inner-most">
-    <div class="has-max is-center content-block is-over hr-large-btm">
-      <h3 class="is-green">Our Practice.</h3>
-      <h1 class="is-white">So, Why Us?</h1>
-      <span class="hr"></span>
-    </div>
+<?php get_template_part('partials/our-practice'); ?>
 
-    <div class="four-column-icon-section">
-      <div class="icon-section-element">
-        <div class="icon-section-element__inner">
-          <div class="four-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="#000000" class="nc-icon-wrapper"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></g></svg>
-          </div>
-        </div>
-        <div class="icon-section-element__inner">
-          <p>Title</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quam. Minus sed accusamus consequatur delectus?</p>
-        </div>
-      </div>
-      <div class="icon-section-element">
-        <div class="icon-section-element__inner">
-          <div class="four-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="#000000" class="nc-icon-wrapper"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></g></svg>
-          </div>
-        </div>
-        <div class="icon-section-element__inner">
-          <p>Title</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quam. Minus sed accusamus consequatur delectus?</p>
-        </div>
-      </div>
-      <div class="icon-section-element">
-        <div class="icon-section-element__inner">
-          <div class="four-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="#000000" class="nc-icon-wrapper"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></g></svg>
-          </div>
-        </div>
-        <div class="icon-section-element__inner">
-          <p>Title</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quam. Minus sed accusamus consequatur delectus?</p>
-        </div>
-      </div>
-      <div class="icon-section-element">
-        <div class="icon-section-element__inner">
-          <div class="four-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="#000000" class="nc-icon-wrapper"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></g></svg>
-          </div>
-        </div>
-        <div class="icon-section-element__inner">
-          <p>Title</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, quam. Minus sed accusamus consequatur delectus?</p>
-        </div>
-      </div>
-    </div>
-    <div class="center view-all">
-      <a href="" class="cta">
-        <span class="text">
-          <span class="text-el text-current">
-            View All Services
-          </span>
-          <span class="text-el text-new">
-            View All Services
-          </span>
-        </span>
-      </a>
-    </div>
-  </div>
-  <div class="bg-el overlay-dark" data-bg-src="<?php echo "$root/dist/assets/images/AdobeStock_169801804_Preview.jpeg"; ?>"></div>
-  <div class="slant-green"></div>
-</section>
-
-<section>
-<div class="spacer-large"></div>
-  <div class="inner">
-    <div class="form-signup">
-      <div class="is-center push-btm">
-        <h3>Join our Newsletter</h3>
-      </div>
-      <form action="">
-        <div class="form-el is-flexed-input">
-          <div class="el-nest">
-            <input type="email" id="email-signup">
-            <label for="email-signup">Email Address</label>
-          </div>
-          <div class="el-nest has-btn-form">
-            <button type="submit" class="cta">Subscribe</button>
-          </div>
-          
-        </div>
-
-      </form>
-    </div>
-  </div>
-  <div class="spacer-large"></div>
-</section>
+<?php get_template_part('partials/news-letter'); ?>
 <?php 
   get_footer();
 ?>
