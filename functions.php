@@ -28,7 +28,7 @@
 
 	// admin footer message, shown in bottom left on all screens
 	function add_admin_footer() {
-	   echo '<span id="footer-thankyou">Wordpress Theme by <a href="http://url.com">Name Here</a>.</span>';
+	   echo '<span id="footer-thankyou">Wordpress Theme by <a href="http://www.viainnovation.com/">Via Innovation</a>.</span>';
 	}
 	add_filter('admin_footer_text', 'add_admin_footer');
 
