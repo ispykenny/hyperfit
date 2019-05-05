@@ -59,3 +59,41 @@
   top: 50%;
   transform: translate(-50%, 50%);
 }
+
+.read-more-cta {
+  color: $themegreen;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  transition: all 240ms ease;
+  span {
+    margin-left: 10px;
+  }
+  svg {
+    fill: $themegreen;
+    transition: all 240ms ease;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    left: auto; right: 0;
+    height: 2px;
+    bottom: -4px;
+    width: 0%;
+    background: $themegreen;
+    transition: all 240ms ease;
+  }
+
+  &:hover {
+    color: darken($themegreen, 15%);
+    svg {
+      fill: darken($themegreen, 15%);
+    }
+    &:after {
+      width: 100%;
+      left: 0; right: auto;
+    }
+  }
+}
+

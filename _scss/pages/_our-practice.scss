@@ -1,0 +1,52 @@
+.two-col-about {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+
+  &__inner {
+    &:first-of-type {
+      width: 40%;
+      margin-right: 10%;
+    }
+    &:last-of-type {
+      width: 50%;
+      margin-left: 0%;
+    }
+  }
+}
+
+.about-image {
+  margin: 0;
+  @include padding-bottom(1, 1 , '.image-nest-about');
+}
+.image-nest-about {
+  background: #eee;
+  background-size: cover;
+  background-position: center;
+  &.bg-el:after {
+    background: transparent;
+  }
+}
+
+.intro-deck:nth-child(even) {
+  .two-col-about {
+    flex-direction: row-reverse;
+    &__inner {
+      &:first-of-type {
+        width: 40%;
+        margin-left: 10%;
+        margin-right: 0em;
+      }
+      &:last-of-type {
+        width: 50%;
+        margin-right: 0%;
+      }
+    }
+  }
+}
+
+.intro-deck {
+  padding: 5em 0em;
+  // margin-bottom: 10em;
+}

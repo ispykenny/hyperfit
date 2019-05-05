@@ -10,6 +10,6 @@
 
 # Issues
 1. Fix slider bubbles on home page.
-~~2. Fix spacing near newsletter section.~~ 
+2. ~~Fix spacing near newsletter section.~~ 
 3. Implement WP Forms into newsletter component.
 

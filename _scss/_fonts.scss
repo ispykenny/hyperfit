@@ -31,6 +31,15 @@ h5 {
   margin: 0;
 }
 
+section h1,
+section h2,
+section h3,
+section h4,
+section h5 {
+  line-height: 1.3;
+}
+
+
 @media(min-width: $bp-sm) {
   body {
     font-size: 14px;
@@ -40,18 +49,5 @@ h5 {
 @media(min-width: $bp-md) {
   body {
     font-size: 15px;
-  }
-}
-
-// @media(min-width: $bp-lg) {
-//   body {
-//     font-size: 15px;
-//   }
-// }
-
-
-@media(min-width: $bp-xl) {
-  body {
-    // font-size: 18px;
   }
 }
