@@ -12498,6 +12498,7 @@ exports.default = function () {
   var Flickity = __webpack_require__(12);
   var $threeBlockParent = $('.three-card-block');
   var $mobileEl = $('.mt-trigger');
+  var $btn = $('.next');
   var isMobile = null;
 
   var $body = $('body');
@@ -12505,7 +12506,8 @@ exports.default = function () {
   if ($('.manage-number').length > 0) {
     $blogSlide.flickity({
       wrapAround: true,
-      prevNextButtons: false
+      prevNextButtons: false,
+      dragThreshold: 10
     });
   }
 
@@ -12524,8 +12526,20 @@ exports.default = function () {
     cellAlign: 'center',
     wrapAround: true,
     autoPlay: 3000,
-    pauseAutoPlayOnHover: false
+    pauseAutoPlayOnHover: false,
+    dragThreshold: 10
   });
+
+  var changeBlogPost = function changeBlogPost(event) {
+    var $t = $(event.currentTarget);
+    if (!$t.hasClass('prev')) {
+      $t.parents('.inner').find('.blog-slide-parent').flickity('next');
+    } else {
+      $t.parents('.inner').find('.blog-slide-parent').flickity('previous');
+    }
+  };
+
+  $btn.on('click', changeBlogPost);
 };
 
 /***/ }),
