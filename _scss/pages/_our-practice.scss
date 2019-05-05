@@ -36,7 +36,7 @@
 
 .about-image {
   margin: 0;
-  @include padding-bottom(1, 1 , '.image-nest-about');
+  @include padding-bottom(1, 1 , ".image-nest-about");
 }
 .image-nest-about {
   background: #eee;
@@ -47,12 +47,12 @@
   }
 }
 
-.intro-deck:nth-child(odd) {
+.intro-deck:nth-child(even) {
   .two-col-about {
     flex-direction: row-reverse;
     .slant-top {
       z-index: -1;
-      left: 0; right: auto;
+      left: 0;
     }
     &__inner {
       &:first-of-type {
