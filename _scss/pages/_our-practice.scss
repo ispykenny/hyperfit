@@ -1,6 +1,9 @@
 .blurb-content-full {
   display: none;
 }
+.intro-deck {
+  position: relative;
+}
 .two-col-about {
   max-width: 500px;
   margin: auto;
@@ -44,9 +47,13 @@
   }
 }
 
-.intro-deck:nth-child(even) {
+.intro-deck:nth-child(odd) {
   .two-col-about {
     flex-direction: row-reverse;
+    .slant-top {
+      z-index: -1;
+      left: 0; right: auto;
+    }
     &__inner {
       &:first-of-type {
         margin-right: 0em;
@@ -77,5 +84,15 @@
 
   @media(min-width: $bp-md) {
     margin-top: 0em;
+  }
+}
+
+.team--info {
+  .blog-featured-strip {
+    z-index: 999;
+    width: 20%;
+  }
+  .slant-top {
+    z-index: -1;
   }
 }
