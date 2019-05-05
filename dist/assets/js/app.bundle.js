@@ -12504,11 +12504,13 @@ exports.default = function () {
   var $body = $('body');
   var $blogSlide = $('.blog-slide-parent');
   if ($('.manage-number').length > 0) {
-    $blogSlide.flickity({
+    var _$blogSlide$flickity;
+
+    $blogSlide.flickity((_$blogSlide$flickity = {
       wrapAround: true,
       prevNextButtons: false,
       dragThreshold: 10
-    });
+    }, _defineProperty(_$blogSlide$flickity, 'wrapAround', true), _defineProperty(_$blogSlide$flickity, 'autoPlay', 3000), _defineProperty(_$blogSlide$flickity, 'pageDots', false), _$blogSlide$flickity));
   }
 
   var checkMobile = function checkMobile() {
@@ -12541,6 +12543,8 @@ exports.default = function () {
 
   $btn.on('click', changeBlogPost);
 };
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /***/ }),
 /* 11 */
