@@ -21,3 +21,7 @@ scroll();
 
 import sliders from './sliders';
 sliders();
+
+import fetchModal from './_modal';
+
+fetchModal();

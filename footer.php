@@ -98,6 +98,17 @@
   </div>
 </footer>
 
+<!-- Modal for Our Practice Page -->
+<div class="modal">
+  <div class="is-max-width">
+    <div class="modal-content"></div>
+    <button class="close-modal">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</div>
+
 </main>
 
 <script src="<?php echo "$root/dist/assets/js/app.bundle.js?=" ?>"></script>

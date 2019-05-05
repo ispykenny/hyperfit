@@ -12292,6 +12292,10 @@ var _sliders = __webpack_require__(10);
 
 var _sliders2 = _interopRequireDefault(_sliders);
 
+var _modal = __webpack_require__(24);
+
+var _modal2 = _interopRequireDefault(_modal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _jquery2.default;
@@ -12312,6 +12316,8 @@ window.jQuery = _jquery2.default;
 (0, _scroll2.default)();
 
 (0, _sliders2.default)();
+
+(0, _modal2.default)();
 
 /***/ }),
 /* 7 */
@@ -12455,15 +12461,12 @@ exports.default = function () {
   var scrollTicker = function scrollTicker() {
     if (didScroll) {
       scrollHomeHero();
-
       if ($winOff > lastScroll && $winOff >= 5) {
         $nav.css({
           'transform': 'translate(-' + 50 + '%,-' + $preNav.outerHeight() + 'px)'
         });
-        console.log('scrolled - wins');
         lastScroll = $winOff;
       } else {
-        console.log('scroll-none');
         $nav.css({
           'transform': ''
         });
@@ -12499,7 +12502,7 @@ exports.default = function () {
 
   var $body = $('body');
   var $blogSlide = $('.blog-slide-parent');
-  if ($body.hasClass('page-template-home')) {
+  if ($('.manage-number').length > 0) {
     $blogSlide.flickity({
       wrapAround: true,
       prevNextButtons: false
@@ -14795,6 +14798,49 @@ return Flickity;
 
 }));
 
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var $modalTrigger = $('.modal-trigger');
+  var $modal = $('.modal');
+  var $closeModal = $('.close-modal');
+  var $modalContent = $('.modal-content');
+  var $body = $('body');
+
+  var fetchModal = function fetchModal(event) {
+    event.preventDefault();
+    var $t = $(event.currentTarget);
+    var $base = $t.parents('.two-col-about__inner');
+    var $blurbInfo = $base.find('.blurb-info').html();
+    var $modalBlurb = $base.find('.blurb-content-full').html();
+    var $avatar = $base.siblings().html();
+
+    $body.css({ 'overflow': 'hidden' });
+
+    $modalContent.append('\n      <div class="avatar">\n          ' + $avatar + '\n      </div>\n      <div class="is-center">\n        <div class="the-info-modal">\n          ' + $blurbInfo + '\n        </div>\n      </div>\n      <div class="modal-blurb">\n        ' + $modalBlurb + '\n      </div>\n    ');
+
+    $modal.fadeIn();
+  };
+
+  $modalTrigger.on('click', function (event) {
+    return fetchModal(event);
+  });
+  $closeModal.on('click', function () {
+    $modal.fadeOut();
+    $modalContent.html('');
+    $body.css({ 'overflow': 'auto' });
+  });
+};
 
 /***/ })
 /******/ ]);

@@ -24,15 +24,12 @@ export default function() {
   let scrollTicker = () => {
     if(didScroll) {
       scrollHomeHero();
-
       if($winOff > lastScroll && $winOff >= 5) {
         $nav.css({
           'transform': 'translate(-'+ 50 + '%,-'+ $preNav.outerHeight() +'px)'
         })
-        console.log('scrolled - wins')
         lastScroll = $winOff;
       } else {
-        console.log('scroll-none')
         $nav.css({
           'transform': ''
         })

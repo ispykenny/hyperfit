@@ -1,5 +1,6 @@
 <section>
-	<div class="inner drop-padd">
+	<div class="spacing spacing--lg"></div>
+	<div class="inner">
 		<div class="has-max is-center content-block is-over hr-large-btm">
 			<h1 class="is-green">Recent News</h1>
 		</div>
@@ -23,7 +24,7 @@
 					<span class="hr"></span>
 					<p><?php echo wp_trim_words( get_the_content(), 20, '...' ); ?></p>
 					<div class="manage-num-btn read-more">
-						<a href="<?php the_permalink();?>">Read More <svg xmlns="http://www.w3.org/2000/svg" width="7.818" height="9" viewBox="0 0 7.818 9"><path d="M392.548,543l-4.514,7.818h9Z" transform="translate(550.818 -388.034) rotate(90)" fill="#000"/></svg></a>
+						<a href="<?php the_permalink();?>" class="read-more-cta">Read More <span><svg xmlns="http://www.w3.org/2000/svg" width="7.818" height="9" viewBox="0 0 7.818 9"><path d="M392.548,543l-4.514,7.818h9Z" transform="translate(550.818 -388.034) rotate(90)"/></svg></span></a>
 					</div>
 				</div>
 			</div>

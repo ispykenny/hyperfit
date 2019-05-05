@@ -7,7 +7,7 @@ export default function() {
 
   let $body = $('body');
   let $blogSlide = $('.blog-slide-parent')
-  if($body.hasClass('page-template-home')) {
+  if($('.manage-number').length > 0) {
     $blogSlide.flickity({
       wrapAround: true,
       prevNextButtons: false
@@ -20,7 +20,6 @@ export default function() {
     } else {
       isMobile = false;
     }
-    
   }
 
   checkMobile();
