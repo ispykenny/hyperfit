@@ -4,6 +4,7 @@
 			<div class="has-max is-center content-block is-over hr-large-btm">
 				<h1 class="is-green">Recent News</h1>
 			</div>
+			<div class="blog-block">
 			<div class="blog-slide-parent">
 				<?php 
 				$homeBlog = new WP_Query(array(
@@ -38,6 +39,7 @@
 				<button class="next">
 				<?php get_template_part('dist/assets/svgs/arrow-right'); ?>
 				</button>
+			</div>
 			</div>
 		</div>
 </section>
