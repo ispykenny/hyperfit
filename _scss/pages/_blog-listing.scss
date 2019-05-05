@@ -22,7 +22,7 @@
   position: absolute;
   bottom: 50px;
   width: 90%;
-  left: 2em;
+  left: 5%;
   z-index: 5;
   color: white;
   h3 {
@@ -86,20 +86,25 @@
 }
 
 .added-blogs {
-  display: flex;
   @include clearfix();
-  flex-wrap: wrap;
+  @media(min-width: $bp-md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .blog-item {
-  width: calc(30% - 2px);
   border: 1px solid #f2f2f2;
-  margin-right: (10% / 2);
   margin-bottom: 2em;
   transition: box-shadow .3s ease;
 
   &:nth-child(3n) {
     margin-right: 0em;
+    margin-bottom: 0em;
+  }
+  @media(min-width: $bp-md) {
+    width: calc(30% - 2px);
+    margin-right: (10% / 2);
   }
 }
 

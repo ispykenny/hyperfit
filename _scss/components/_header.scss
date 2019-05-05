@@ -1,5 +1,20 @@
 header {
   overflow: hidden;
+  &.standard-header {
+    .hdr-content {
+      padding: 6em 0em 6em 0em;
+    }
+    @media(min-width: $bp-sm) {
+      .hdr-content {
+        padding: 8em 0em 10em 0em;
+      }
+    }
+    @media(min-width: $bp-lg ){
+      .hdr-content {
+        padding: 10em 0em 12em 0em;
+      }
+    }
+  }
 }
 .hdr-content {
   padding: 4em 0em 8em 0em;

@@ -1,17 +1,29 @@
 .two-col-about {
-  display: flex;
-  align-items: center;
-  max-width: 1200px;
+  max-width: 500px;
   margin: auto;
 
+  @media(min-width: $bp-md) {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+  } 
   &__inner {
+    width: 100%;
+    @media(min-width: $bp-md) {
+      width: auto;
+    }
+
     &:first-of-type {
-      width: 40%;
-      margin-right: 10%;
+      @media(min-width: $bp-md) {
+        width: 40%;
+        margin-right: 10%;
+      }
     }
     &:last-of-type {
-      width: 50%;
-      margin-left: 0%;
+      @media(min-width: $bp-md) {
+        width: 50%;
+        margin-left: 0%;
+      }
     }
   }
 }
@@ -34,19 +46,33 @@
     flex-direction: row-reverse;
     &__inner {
       &:first-of-type {
-        width: 40%;
-        margin-left: 10%;
         margin-right: 0em;
+        @media(min-width: $bp-md) {
+          width: 40%;
+          margin-left: 10%;
+        }
       }
       &:last-of-type {
-        width: 50%;
         margin-right: 0%;
+        @media(min-width: $bp-md) {
+          width: 50%;
+        }
       }
     }
   }
 }
 
 .intro-deck {
-  padding: 5em 0em;
-  // margin-bottom: 10em;
+  padding: 3em 0em;
+  @media(min-width: $bp-md) {
+    padding: 5em 0em;
+  }
+} 
+
+.about-blurb {
+  margin-top: 2em;
+
+  @media(min-width: $bp-md) {
+    margin-top: 0em;
+  }
 }

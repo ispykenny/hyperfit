@@ -29,7 +29,6 @@
   li {
     float: left;
     width: 25%;
-    display: inline-block;
     &:last-of-type {
       margin-right: 0em;
     }
@@ -46,6 +45,8 @@
     @media(min-width: $bp-sm ){
       width: 200px;
     }
+    box-shadow: none;
+    -webkit-appearance: none;
     border: 1px solid #ddd;
     border-right: none;
     outline: none;
@@ -64,7 +65,8 @@
     @include btn-reset();
     background: $themegreen;
     min-width: 20%;
-    height: 44px;
+    height: 47px;
+    @media(min-width: $bp-sm) { height: 44px;}
     padding: 0em 3em 0em 2em;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
