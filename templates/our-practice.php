@@ -57,10 +57,10 @@
             <h4><?php echo $owners['job_title']; ?></h4>
           </div>
           <div class="blurb-content">
-            <p>Dr. Charles Guglin MD FACS was born and raised in Rochester, NY.  After receiving a BS from SUNY at Albany, NY he went on to medical school at the University of Pittsburgh School of Medicine. </p>
+            <p><?php echo wp_trim_words( $owners['about_info'], 40, '...' ); ?> </p>
           </div>
           <div class="blurb-content-full">
-            <?php echo $owners['about_info'] ?>
+            <?php echo $owners['about_info']; ?>
           </div>
           <a href="" class="read-more-cta modal-trigger">Read More <span><svg xmlns="http://www.w3.org/2000/svg" width="7.818" height="9" viewBox="0 0 7.818 9"><path d="M392.548,543l-4.514,7.818h9Z" transform="translate(550.818 -388.034) rotate(90)"/></svg></span></a>
         </div>

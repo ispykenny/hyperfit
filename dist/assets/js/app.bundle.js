@@ -12411,10 +12411,14 @@ exports.default = function () {
     if (!mobileMenu) {
       mobileMenu = true;
       $body.addClass('mobile-showing');
-      $parentNav.slideDown(100);
+      $parentNav.slideDown(200);
+      setTimeout(function () {
+        return $body.addClass('show-li');
+      });
     } else {
       $body.removeClass('mobile-showing');
-      $parentNav.slideUp(100);
+      $parentNav.slideUp(200);
+      $body.removeClass('show-li');
       mobileMenu = false;
     }
   };
@@ -12510,7 +12514,7 @@ exports.default = function () {
       wrapAround: true,
       prevNextButtons: false,
       dragThreshold: 10
-    }, _defineProperty(_$blogSlide$flickity, 'wrapAround', true), _defineProperty(_$blogSlide$flickity, 'autoPlay', 3000), _defineProperty(_$blogSlide$flickity, 'pageDots', false), _$blogSlide$flickity));
+    }, _defineProperty(_$blogSlide$flickity, 'wrapAround', true), _defineProperty(_$blogSlide$flickity, 'pageDots', false), _$blogSlide$flickity));
   }
 
   var checkMobile = function checkMobile() {

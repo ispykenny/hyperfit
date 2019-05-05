@@ -81,6 +81,9 @@ nav .inner {
   > li {
     position: relative;
     margin-bottom: 0.4em;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 600ms, transform 900ms ease;
     &:last-of-type {
       margin-bottom: 0em;
     }
@@ -90,11 +93,11 @@ nav .inner {
       &:after {
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: -4px;
         left: auto;
         right: 0;
         width: 0%;
-        height: 1px;
+        height: 2px;
         background: $themegreen;
         transition: width 250ms ease;
       }
@@ -107,6 +110,26 @@ nav .inner {
         }
       }
     }
+  }
+}
+.show-li {
+  .parent-nav > li {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media(min-width: $bp-md) {
+  .parent-nav > li {
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+@for $i from 1 through 10 {
+  .parent-nav > li:nth-child(#{$i}) {
+    transition-delay: 130ms * $i - 1;
   }
 }
 
@@ -145,14 +168,17 @@ nav .inner {
 }
 
 .show-dropdown {
+
   .child-nav {
     visibility: visible;
     display: block;
     opacity: 1;
   }
+
   .has-dropdown svg {
     transform: rotate(90deg)
   }
+  
 }
 .sr-only {
   @include sr-only();
@@ -162,43 +188,42 @@ nav .inner {
   top: 50%; right: 0;
   transform: translateY(-50%);
   @include btn-reset();
-  height: 40px;
-  width: 50px;
+  height: 34px;
+  width: 45px;
   border-radius: 5px;
   background: #333;
 
   .mt-el {
-
     height: 2px; 
     width: 55%;
     left: 22.5%;
     background: white;
     position: absolute;
-    transition: transform 200ms $ease-out-quart;
+    transition: transform 300ms ease-out;
   }
   .mt-top {
-    top: 10px;
+    top: 8px;
   }
   .mt-mid {
-    top: 18px;
+    top: 15px;
   }
   .mt-btm {
-    top: 26px;
+    top: 23px;
   }
 }
 
 .mobile-showing {
   .mt-trigger {
-      .mt-el {
+    .mt-el {
       width: 50%;
       left: 25%;
     }
     .mt-top {
       transform: rotate(45deg);
-      top:18px;
+      top: 15px;
     }
     .mt-mid {
-      top: 18px;
+      top: 15px;
       transform: rotate(-45deg);
       transition: 150ms ease;
     }

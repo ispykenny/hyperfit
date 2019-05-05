@@ -14,7 +14,6 @@ export default function() {
       prevNextButtons: false,
       dragThreshold: 10,
       wrapAround: true,
-      autoPlay: 3000,
       pageDots: false
     });
   }

@@ -42,11 +42,11 @@
   .image-el {
     transition-delay: 600ms;
     transition: all 1100ms ease;
-    transform: translateX(120px);
+    transform: translateX(120px) scale(1.2);
   }
   &.is-selected {
     .image-el {
-      transform: translateX(0px);
+      transform: translateX(0px) scale(1);
     }
     p {
       opacity: 1;
@@ -63,8 +63,11 @@
 }
 
 .btn-group {
-  text-align: center;
-  margin-top: 1em;
+  max-width: 1200px;
+  margin: auto;
+  text-align: right;
+  margin-top: 1.5em;
+  @media(min-width: $bp-md) {margin-top: 3em;}
   button {
     cursor: pointer;
     @include btn-reset();

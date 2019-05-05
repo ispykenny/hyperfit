@@ -35,10 +35,12 @@ export default function() {
     if(!mobileMenu) {
       mobileMenu = true;
       $body.addClass('mobile-showing')
-      $parentNav.slideDown(100);
+      $parentNav.slideDown(200);
+      setTimeout(() => $body.addClass('show-li'))
     } else {
       $body.removeClass('mobile-showing')
-      $parentNav.slideUp(100);
+      $parentNav.slideUp(200);
+      $body.removeClass('show-li')
       mobileMenu = false;
     }
   }
