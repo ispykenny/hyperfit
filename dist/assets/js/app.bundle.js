@@ -12296,6 +12296,10 @@ var _modal = __webpack_require__(24);
 
 var _modal2 = _interopRequireDefault(_modal);
 
+var _faqPage = __webpack_require__(25);
+
+var _faqPage2 = _interopRequireDefault(_faqPage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _jquery2.default;
@@ -12318,6 +12322,8 @@ window.jQuery = _jquery2.default;
 (0, _sliders2.default)();
 
 (0, _modal2.default)();
+
+(0, _faqPage2.default)();
 
 /***/ }),
 /* 7 */
@@ -14862,6 +14868,36 @@ exports.default = function () {
     $modalContent.html('');
     $body.css({ 'overflow': 'auto' });
   });
+};
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var $miniNav = $('.mini-nav-el');
+  var $faqCard = $('.question');
+  var $faqSpeed = 140;
+
+  var displayCard = function displayCard(event) {
+    var $t = $(event.currentTarget);
+    if (!$t.parents('.faq-card').hasClass('is-active')) {
+      $t.parents('.faq-card').addClass('is-active');
+      $t.parents('.faq-card').find('.answer').slideDown($faqSpeed);
+    } else {
+      $t.parents('.faq-card').removeClass('is-active');
+      $t.parents('.faq-card').find('.answer').slideUp($faqSpeed);
+    }
+  };
+
+  $faqCard.on('click', displayCard);
 };
 
 /***/ })

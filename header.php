@@ -105,7 +105,7 @@
           </ul>
       
         </li>
-        <li><a href="">Faqs</a></li>
+        <li><a href="<?php echo site_url('/faqs');?>">Faqs</a></li>
         <li><a href="<?php echo site_url('blog');?>">Blog</a></li>
         <li><a href="">Contact</a></li>
       </ul>

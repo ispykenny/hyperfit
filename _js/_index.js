@@ -25,3 +25,7 @@ sliders();
 import fetchModal from './_modal';
 
 fetchModal();
+
+import faq from './faq-page';
+
+faq();
