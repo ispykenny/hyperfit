@@ -27,14 +27,24 @@
   color: $themegreen;
 }
 .two-faq-col {
-  display: flex;
+  @media(min-width: $bp-md) {
+    display: flex;
+  }
   &__el {
     &:first-of-type {
-      width: 40%;
-      margin-right: 5%;
+      width: 100%;
+      margin-bottom: 2em;
+      @media(min-width: $bp-md) {
+        width: 40%;
+        margin-right: 5%;
+        margin-bottom: 0em;
+      }
     }
     &:last-of-type {
-      width: 55%;
+      width: 100%;
+      @media(min-width: $bp-md) {
+        width: 55%;
+      }
     }
   }
 }

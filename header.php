@@ -74,7 +74,7 @@
       </div>
     </div>
   </div>
-  <div class="inner">
+  <div class="inner main-nav">
     <div class="nav-section">
       <a href="<?php echo site_url('');?>" class="logo">
         <img src="<?php the_field('logo', 'options') ?>" alt="">

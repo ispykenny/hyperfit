@@ -14885,18 +14885,32 @@ exports.default = function () {
   var $miniNav = $('.mini-nav-el');
   var $faqCard = $('.question');
   var $faqSpeed = 140;
+  var $slideNav = $('.slide-nav');
 
   var displayCard = function displayCard(event) {
     var $t = $(event.currentTarget);
-    if (!$t.parents('.faq-card').hasClass('is-active')) {
-      $t.parents('.faq-card').addClass('is-active');
-      $t.parents('.faq-card').find('.answer').slideDown($faqSpeed);
+    var $base = $t.parents('.faq-card');
+
+    if (!$base.hasClass('is-active')) {
+      $base.addClass('is-active');
+      $base.find('.answer').slideDown($faqSpeed);
     } else {
-      $t.parents('.faq-card').removeClass('is-active');
-      $t.parents('.faq-card').find('.answer').slideUp($faqSpeed);
+      $base.removeClass('is-active');
+      $base.find('.answer').slideUp($faqSpeed);
     }
   };
 
+  var slideNavFunc = function slideNavFunc(event) {
+    event.preventDefault();
+    var $t = $(event.currentTarget);
+    $('html, body').animate({
+      'scrollTop': $($t.attr('href')).offset().top - $('.main-nav').outerHeight()
+    }, 300);
+  };
+
+  $slideNav.on('click', function (event) {
+    return slideNavFunc(event);
+  });
   $faqCard.on('click', displayCard);
 };
 

@@ -27,29 +27,39 @@
   <div class="mini-nav-el">
     <div class="inner">
       <ul id="nav-nav">
-        <li><a href="#item-0">Appointments</a></li>
-        <li><a href="#item-1">Treatments</a></li>
-        <li><a href="#item-2">Payments</a></li>
+        <?php 
+          $count;
+          $faqCatItems = get_field('faq_elements');
+          foreach($faqCatItems as $theFaqListEl) {
+          $count++
+        ?>
+          <li><a href="#item-<?php echo $count; ?>" class="slide-nav"><?php echo $theFaqListEl['category']; ?></a></li>
+          <?php };  $count = null?>
       </ul>
     </div>
   </div>
 </section>
 
 
-<?php for($i = 0; $i < 3; $i++) : ?>
-<section>
+<?php 
+  $faq = get_field('faq_elements');
+  foreach($faq as $theFaqParent) : $count++
+?>
+<section id="item-<?php echo $count; ?>">
   <div class="spacing spacing--lg"></div>
   <div class="inner">
     <div class="two-faq-col">
       <div class="two-faq-col__el category">
         <div class="hr"></div>
         <h4>What to know</h4>
-        <h1 class="green">Appointments</h1>
+        <h1 class="green"><?php echo $theFaqParent['category']; ?></h1>
       </div>
       <div class="two-faq-col__el content">
-        <?php for($c = 0; $c < 4; $c++) : ?>
+        <?php 
+          $theFaqCats = $theFaqParent['qa']; 
+          foreach($theFaqCats as $qa):
+        ?>
         <div class="faq-card">
-      
           <div class="faq-card_el">
             <div class="question">
               <div class="indicator-parent">
@@ -63,19 +73,19 @@
 
                 </button>
               </div>
-              <h4>Lorem ipsum dolor sit amet consectetur?</h4>
+              <h4><?php echo $qa['question']; ?></h4>
             </div>
             <div class="answer">
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptates voluptate, animi reprehenderit dolor doloribus a quam corporis neque eius <a href="https://google.com">hello</a>  illo ad sit cumque aperiam maiores. Non voluptate dolorem laborum?</p>
+            <?php echo $qa['answer']; ?>
             </div>
           </div>
         </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
 </section>
-<?php endfor; ?>
+<?php endforeach; ?>
 <section>
 <div class="spacing spacing--lg"></div>
 </section>
