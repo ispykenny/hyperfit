@@ -37,11 +37,11 @@
 }
 
 .card-services {
-  // width: 45%;
   width: 100%;
   border: 1px solid #ddd;
   margin-top: 6em;
   position: relative;
+  background: white;
   @media(min-width: $bp-sm) {
     width: 48%;
     &:nth-child(2n) {
