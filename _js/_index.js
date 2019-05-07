@@ -23,9 +23,10 @@ import sliders from './sliders';
 sliders();
 
 import fetchModal from './_modal';
-
 fetchModal();
 
 import faq from './faq-page';
-
 faq();
+
+import load from './load';
+load();

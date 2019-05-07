@@ -12300,6 +12300,10 @@ var _faqPage = __webpack_require__(25);
 
 var _faqPage2 = _interopRequireDefault(_faqPage);
 
+var _load = __webpack_require__(26);
+
+var _load2 = _interopRequireDefault(_load);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _jquery2.default;
@@ -12324,6 +12328,8 @@ window.jQuery = _jquery2.default;
 (0, _modal2.default)();
 
 (0, _faqPage2.default)();
+
+(0, _load2.default)();
 
 /***/ }),
 /* 7 */
@@ -14912,6 +14918,22 @@ exports.default = function () {
     return slideNavFunc(event);
   });
   $faqCard.on('click', displayCard);
+};
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var url = "http://localhost:3000/" || "http://ispykenny.com/hyperfit/";
+  console.log(url);
 };
 
 /***/ })
