@@ -5,7 +5,7 @@ export default function() {
     event.preventDefault();
     let storeHref = $(event.currentTarget).attr('href');
     $('body').removeClass('site-loaded');
-    setTimeout(() => window.location = storeHref, 400)
+    setTimeout(() => window.location = storeHref, 200)
   }
 
   $navLinks.on('click', event => routePage(event))

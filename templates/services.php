@@ -1,0 +1,84 @@
+<?php 
+  /* Template Name: Services Landing */
+  get_header();
+  $root = get_template_directory_uri();
+?>
+
+<header class="standard-header">
+  <div class="inner">
+    <div class="hdr-content">
+      <div class="hdr-content__el">
+        <div class="hero-anime">
+          <h4><?php the_field('hero_sub_title'); ?></h4>
+        </div>
+        <div class="hero-anime">
+          <h1><?php the_field('hero_title'); ?></h1>
+        </div>
+        <div class="hr"></div>
+        <div class="hero-anime"><p><?php the_field('hero_blurb'); ?></p></div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-el par" data-bg-src="<?php the_field('hero_background');?> "></div>
+  <div class="stripe"></div>
+</header>
+
+<section>
+  <div class="spacing spacing--lg"></div>
+    <div class="inner">
+      <div class="services-two-col">
+        <div class="services-two-col__el has-request">
+          <div class="request-box">
+            <div class="request-box__inner content-block">
+              <h1>Request Appointment</h1>
+              <div class="hr"></div>
+              <p>We are proud to offer age management and preventative care treatments to enhance the lives.</p>
+              <div class="cta-parent-services">
+                <a href="" class="cta">
+                <span class="text">
+                  <span class="text-el text-current">
+                    Book Now
+                  </span>
+                  <span class="text-el text-new">
+                    Book Now
+                  </span>
+                </span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="services-two-col__el has-cardstack">
+          <?php for($i = 0; $i < 9; $i++) : ?>
+            <div class="card-services">
+              <div class="card-services__inner is-center">
+                <h4 class="card-title">Card Title</h4>
+                <div class="hr"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aut nihil voluptatibus deleniti minima.</p>
+                <div class="cta-parent-card">
+                  <a href="" class="cta">
+                  <span class="text">
+                    <span class="text-el text-current">
+                      Learn More
+                    </span>
+                    <span class="text-el text-new">
+                      Learn More
+                    </span>
+                  </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          <?php endfor; ?>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+<?php get_template_part('partials/recent-blogs'); ?>
+<?php get_template_part('partials/newsletter'); ?>
+
+<?php get_footer(); ?>

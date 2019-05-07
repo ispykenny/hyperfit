@@ -1,0 +1,39 @@
+.services-two-col {
+  display: flex;
+  position: relative;
+  &__el {
+    position: relative;
+    &:first-of-type {
+      width: 40%;
+    }
+    &:last-of-type {
+      width: 55%;
+      margin-left: 5%;
+    }
+  }
+}
+
+
+.has-cardstack {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-services {
+  width: 45%;
+  border: 1px solid #ddd;
+  margin-bottom: 2em;
+  &:nth-child(2n) {
+    margin-left: calc(10% - 4px);
+  }
+  &__inner {
+    padding: 4em 2em;
+  }
+}
+
+.request-box {
+  border: 1px solid #eee;
+  &__inner {
+    padding: 3em 1em;
+  }
+}

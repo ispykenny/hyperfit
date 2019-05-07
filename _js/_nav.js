@@ -8,6 +8,10 @@ export default function() {
   let $parentNav = $('.parent-nav');
   let $mTrigger = $('.mt-trigger');
 
+  if($('.request-box').is(":visible")) {
+    $('.pre-nav').hide();
+  }
+
   let homeHdr = () => {
     $('header').css({'padding-top': $nav.outerHeight()})
   }

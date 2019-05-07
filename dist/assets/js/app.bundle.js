@@ -12304,6 +12304,10 @@ var _load = __webpack_require__(26);
 
 var _load2 = _interopRequireDefault(_load);
 
+var _servicesPage = __webpack_require__(27);
+
+var _servicesPage2 = _interopRequireDefault(_servicesPage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _jquery2.default;
@@ -12330,6 +12334,8 @@ window.jQuery = _jquery2.default;
 (0, _faqPage2.default)();
 
 (0, _load2.default)();
+
+(0, _servicesPage2.default)();
 
 /***/ }),
 /* 7 */
@@ -12395,6 +12401,10 @@ exports.default = function () {
   var $hasDropDown = $('.has-dropdown');
   var $parentNav = $('.parent-nav');
   var $mTrigger = $('.mt-trigger');
+
+  if ($('.request-box').is(":visible")) {
+    $('.pre-nav').hide();
+  }
 
   var homeHdr = function homeHdr() {
     $('header').css({ 'padding-top': $nav.outerHeight() });
@@ -12477,7 +12487,7 @@ exports.default = function () {
   var scrollTicker = function scrollTicker() {
     if (didScroll) {
       scrollHomeHero();
-      if ($winOff > lastScroll && $winOff >= 5) {
+      if ($winOff > lastScroll && $winOff >= 5 && !$('.request-box').is(':visible')) {
         $nav.css({
           'transform': 'translate(-' + 50 + '%,-' + $preNav.outerHeight() + 'px)'
         });
@@ -14940,11 +14950,90 @@ exports.default = function () {
     $('body').removeClass('site-loaded');
     setTimeout(function () {
       return window.location = storeHref;
-    }, 400);
+    }, 200);
   };
 
   $navLinks.on('click', function (event) {
     return routePage(event);
+  });
+};
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var $body = $('body');
+  var userScroll = false;
+  var $navHeight = $('nav').height();
+  var $winOffSet = $(window).scrollTop();
+  var $parentEl = $('.services-two-col__el');
+  var $hasRequest = $('.has-request');
+  var $requestBox = $('.request-box');
+  var activeWidth = $hasRequest.width();
+  var $hasRequestHeight = $hasRequest.height();
+
+  // page-check
+  if (!$body.hasClass('page-template-services')) return;
+  console.log($hasRequestHeight);
+
+  var sniper = function sniper() {
+    if ($winOffSet + $navHeight >= $parentEl.offset().top) {
+      $requestBox.css({
+        'position': 'fixed',
+        'width': activeWidth,
+        'top': $navHeight
+      });
+    } else {
+      $requestBox.css({
+        'position': '',
+        'width': '',
+        'top': ''
+      });
+    }
+    if ($winOffSet + $navHeight >= $hasRequestHeight + $hasRequest.offset().top - $requestBox.height()) {
+      $requestBox.css({
+        'position': 'absolute',
+        'top': 'auto',
+        'bottom': '1em'
+      });
+    }
+  };
+
+  // figuring out how to make it fixed again once the user scrolls back up from this section.
+
+  var collectInfo = function collectInfo() {
+    activeWidth = $hasRequest.width();
+    $hasRequestHeight = $hasRequest.height();
+    console.log($hasRequestHeight);
+    sniper();
+  };
+
+  var updatingScrollPos = function updatingScrollPos() {
+    userScroll = true;
+    $winOffSet = $(window).scrollTop();
+  };
+
+  var serviceScrollTicker = function serviceScrollTicker() {
+    if (userScroll) {
+      sniper();
+      userScroll = false;
+    }
+    requestAnimationFrame(serviceScrollTicker);
+  };
+
+  requestAnimationFrame(serviceScrollTicker);
+  $(window).on({
+    'scroll': updatingScrollPos,
+    'resize': collectInfo,
+    'load': sniper
   });
 };
 

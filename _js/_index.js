@@ -30,3 +30,6 @@ faq();
 
 import load from './load';
 load();
+
+import services from './services-page';
+services();
