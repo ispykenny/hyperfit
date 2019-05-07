@@ -45,8 +45,20 @@
                 </span>
                 </a>
               </div>
-
             </div>
+            <div class="social-request-box">
+                <ul>
+                  <li id="follow-rb">Follow Us</li>
+                  <?php $socialLinksFooter = get_field('social_links', 'options');
+                    foreach($socialLinksFooter as $sslF) { ?>
+                    <li>
+                      <a href="<?php echo $sslF['link'];?>" target="_blank">
+                        <?php  get_template_part('dist/assets/svgs/'.$sslF['icon']); ?>
+                      </a>
+                    </li>
+                  <?php } ?>
+                </ul>
+              </div>
           </div>
         </div>
         <div class="services-two-col__el has-cardstack">

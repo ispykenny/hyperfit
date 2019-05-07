@@ -85,3 +85,30 @@
 .cta-parent-mobile {
   text-align: center;
 }
+
+#follow-rb {
+  font-weight: 700;
+}
+.social-request-box {
+  background: $themegreen;
+  ul {
+    margin: 0;
+    padding: 1em 2em;
+    list-style-type: none;
+    display: flex;
+  }
+  li {
+    margin-right: 20px;
+    // svg {
+    //   fill: white;
+    //   stroke-width: 0px;
+    // }
+    // path, rect {
+    //   stroke: white !important;
+    // }
+    &:last-of-type {
+      margin-right: 0em;
+    }
+  }
+  
+}
