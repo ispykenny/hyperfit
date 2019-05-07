@@ -14979,40 +14979,52 @@ exports.default = function () {
   var $requestBox = $('.request-box');
   var activeWidth = $hasRequest.width();
   var $hasRequestHeight = $hasRequest.height();
+  var $mobileChecker = $('.mt-trigger').is(':visible');
+  console.log($mobileChecker);
 
   // page-check
   if (!$body.hasClass('page-template-services')) return;
   console.log($hasRequestHeight);
 
   var sniper = function sniper() {
+    if ($mobileChecker) return;
     if ($winOffSet + $navHeight >= $parentEl.offset().top) {
       $requestBox.css({
         'position': 'fixed',
         'width': activeWidth,
-        'top': $navHeight
-      });
+        'top': $navHeight + 10,
+        'bottom': 'auto'
+      }).addClass('is-fixed');
     } else {
       $requestBox.css({
         'position': '',
         'width': '',
-        'top': ''
-      });
+        'top': '',
+        'bottom': ''
+      }).removeClass('is-fixed');
     }
     if ($winOffSet + $navHeight >= $hasRequestHeight + $hasRequest.offset().top - $requestBox.height()) {
       $requestBox.css({
         'position': 'absolute',
+        'width': activeWidth,
         'top': 'auto',
-        'bottom': '1em'
-      });
+        'bottom': '0em'
+      }).removeClass('is-fixed');
+    } else if ($winOffSet + $navHeight >= $hasRequestHeight + $hasRequest.offset().top) {
+      $requestBox.css({
+        'position': 'fixed',
+        'width': activeWidth,
+        'top': $navHeight + 10,
+        'bottom': '0em'
+      }).addClass('is-fixed');
     }
   };
-
-  // figuring out how to make it fixed again once the user scrolls back up from this section.
 
   var collectInfo = function collectInfo() {
     activeWidth = $hasRequest.width();
     $hasRequestHeight = $hasRequest.height();
-    console.log($hasRequestHeight);
+    $mobileChecker = $('.mt-trigger').is(':visible');
+    console.log($mobileChecker);
     sniper();
   };
 

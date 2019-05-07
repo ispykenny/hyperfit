@@ -8,6 +8,8 @@ export default function() {
   let $requestBox = $('.request-box');
   let activeWidth = $hasRequest.width();
   let $hasRequestHeight = $hasRequest.height();
+  let $mobileChecker = $('.mt-trigger').is(':visible');
+  console.log($mobileChecker);
 
 
   // page-check
@@ -15,34 +17,44 @@ export default function() {
   console.log($hasRequestHeight)
 
   let sniper = () => {
+    if($mobileChecker) return;
     if($winOffSet + $navHeight >= $parentEl.offset().top) {
       $requestBox.css({
         'position': 'fixed',
         'width': activeWidth,
-        'top': $navHeight 
-      })
+        'top': $navHeight + 10,
+        'bottom': 'auto',
+      }).addClass('is-fixed');
     } else {
       $requestBox.css({
         'position': '',
         'width': '',
-        'top': ''
-      })
+        'top': '',
+        'bottom': ''
+      }).removeClass('is-fixed');
     } 
     if($winOffSet + $navHeight >= $hasRequestHeight + $hasRequest.offset().top - $requestBox.height()) {
       $requestBox.css({
         'position': 'absolute',
+        'width': activeWidth,
         'top': 'auto',
-        'bottom': '1em'
-      })
+        'bottom': '0em'
+      }).removeClass('is-fixed');
+    } else if($winOffSet + $navHeight >= $hasRequestHeight + $hasRequest.offset().top ) {
+      $requestBox.css({
+        'position': 'fixed',
+        'width': activeWidth,
+        'top': $navHeight + 10,
+        'bottom': '0em'
+      }).addClass('is-fixed')
     }
   }
-
-  // figuring out how to make it fixed again once the user scrolls back up from this section.
 
   let collectInfo = () => { 
     activeWidth = $hasRequest.width();
     $hasRequestHeight = $hasRequest.height();
-    console.log($hasRequestHeight);
+    $mobileChecker = $('.mt-trigger').is(':visible');
+    console.log($mobileChecker)
     sniper();   
   }
 

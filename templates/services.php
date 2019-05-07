@@ -52,6 +52,9 @@
         <div class="services-two-col__el has-cardstack">
           <?php for($i = 0; $i < 9; $i++) : ?>
             <div class="card-services">
+              <div class="icon-nest">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="#000000" class="nc-icon-wrapper"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></g></svg>
+              </div>
               <div class="card-services__inner is-center">
                 <h4 class="card-title">Card Title</h4>
                 <div class="hr"></div>
@@ -79,6 +82,11 @@
 
 
 <?php get_template_part('partials/recent-blogs'); ?>
-<?php get_template_part('partials/newsletter'); ?>
+<?php get_template_part('partials/news-letter'); ?>
 
+<div class="request-app-mobile">
+  <div class="cta-parent-mobile">
+    <a href="" class="cta">Request Appointment</a>
+  </div>
+</div>
 <?php get_footer(); ?>
