@@ -1,4 +1,12 @@
 export default function() {
-  let url = "http://localhost:3000/" || "http://ispykenny.com/hyperfit/";
-  console.log(url) 
+  let $navLinks = $('a[href*="localhost"], a[href*="ispykenny.com"], a[href*="hyperfitmd.com"] ');
+
+  const routePage = event => {
+    event.preventDefault();
+    let storeHref = $(event.currentTarget).attr('href');
+    $('body').removeClass('site-loaded');
+    setTimeout(() => window.location = storeHref, 400)
+  }
+
+  $navLinks.on('click', event => routePage(event))
 }

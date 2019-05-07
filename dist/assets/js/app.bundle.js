@@ -12313,7 +12313,7 @@ window.jQuery = _jquery2.default;
   (0, _jquery2.default)('.loader').fadeOut(1000);
   setTimeout(function () {
     (0, _jquery2.default)('body').addClass('site-loaded');
-  }, 1000);
+  }, 500);
   (0, _jquery2.default)('.loader').detach();
 });
 
@@ -14932,8 +14932,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-  var url = "http://localhost:3000/" || "http://ispykenny.com/hyperfit/";
-  console.log(url);
+  var $navLinks = $('a[href*="localhost"], a[href*="ispykenny.com"], a[href*="hyperfitmd.com"] ');
+
+  var routePage = function routePage(event) {
+    event.preventDefault();
+    var storeHref = $(event.currentTarget).attr('href');
+    $('body').removeClass('site-loaded');
+    setTimeout(function () {
+      return window.location = storeHref;
+    }, 400);
+  };
+
+  $navLinks.on('click', function (event) {
+    return routePage(event);
+  });
 };
 
 /***/ })

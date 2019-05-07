@@ -6,7 +6,7 @@ $(window).on('load', () => {
   $('.loader').fadeOut(1000);
   setTimeout(function() {
     $('body').addClass('site-loaded');
-  }, 1000);
+  }, 500);
   $('.loader').detach();
 });
 
