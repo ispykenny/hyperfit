@@ -90,10 +90,11 @@
       </div>
     </div>
   <div class="blog-featured-strip"></div>
+  <div class="spacing spacing--lg"></div>
 </section>
 
 
-
+<?php get_template_part('partials/two-col-with-slider'); ?>
 <?php get_template_part('partials/recent-blogs'); ?>
 <?php get_template_part('partials/news-letter'); ?>
 

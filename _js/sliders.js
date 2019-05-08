@@ -4,7 +4,24 @@ export default function() {
   let $threeBlockParent = $('.three-card-block');
   let $mobileEl = $('.mt-trigger');
   let $btn = $('.next');
+  let $slideTest = $('.slide-parent-card');
+  let $slideBtnTest = $('.slide-item-btn');
+
   let isMobile = null;
+
+  if($slideTest.is(":visible")) {
+    $slideTest.flickity({
+      pageDots: false,
+      prevNextButtons: false,
+      wrapAround: true,
+      autoPlay: 5000,
+      pauseAutoPlayOnHover: false,
+      cellAlign: 'left',
+      dragThreshold: 10
+    });
+  }
+  
+  
 
   let $body = $('body');
   let $blogSlide = $('.blog-slide-parent')
@@ -13,7 +30,6 @@ export default function() {
       wrapAround: true,
       prevNextButtons: false,
       dragThreshold: 10,
-      wrapAround: true,
       pageDots: false
     });
   }
@@ -47,5 +63,17 @@ export default function() {
     }
   }
 
+  let swapTest = event => {
+    let $t = $(event.currentTarget);
+    let $getBase = $t.parents('.two-col-slide-main').find('.slide-parent-card');
+    $getBase.flickity('stopPlayer');
+    if($t.hasClass('prev')) {
+      $getBase.flickity('previous');
+    } else {
+      $getBase.flickity('next');
+    }
+  }
+
+  $slideBtnTest.on('click', swapTest)
   $btn.on('click', changeBlogPost)
 }

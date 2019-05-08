@@ -137,8 +137,12 @@ nav .inner {
   max-width: 120px;
   display: inline-block;
   padding-top: 2px;
+  position: relative;
   img {
     width: 100%;
+  }
+  &:active {
+    top: 2px;
   }
 }
 .child-nav {
