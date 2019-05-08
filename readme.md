@@ -1,12 +1,12 @@
 # To-dos
 1. ~~Dev out Our Practice Page.~~
 2. ~~Dev out Services Landing.~~
-3. Dev out Services Single.
+3. ~~Dev out Services Single.~~
 3. Dev out contact page.
 4. ~~Dev out FAQ.~~
 5. Update Nav Bar with WP native.
 6. ~~Create WP Dev ENV for showing.~~
-7. Build out testimonial slider component
+7. ~~Build out testimonial slider component~~
 
 ---
 
