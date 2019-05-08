@@ -9,12 +9,11 @@ export default function() {
   let activeWidth = $hasRequest.width();
   let $hasRequestHeight = $hasRequest.height();
   let $mobileChecker = $('.mt-trigger').is(':visible');
-  console.log($mobileChecker);
-
-
+  
+  console.log('hello')
   // page-check
-  if(!$body.hasClass('page-template-services')) return;
-  console.log($hasRequestHeight)
+  if(!$requestBox.is(":visible")) return;
+  console.log($requestBox.is(":visible"))
 
   let sniper = () => {
     if($mobileChecker) return;

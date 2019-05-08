@@ -76,16 +76,9 @@
               </span>
             </span>
           </a>
-          <a href="" class="cta is-white">
-            <span class="text">
-              <span class="text-el text-current">
-                Request Appointment
-              </span>
-              <span class="text-el text-new">
-                Request Appointment
-              </span>
-            </span>
-          </a>
+         <div>
+          <a href="<?php the_permalink();?>" class="read-more-cta">Request Appointment </a>
+         </div>
         </div>
       </div>
     </div>

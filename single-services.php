@@ -1,25 +1,22 @@
-<?php 
-  /* Template Name: Services Landing */
-  get_header();
-  $root = get_template_directory_uri();
-?>
+<?php get_header(); ?>
+<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 <header class="standard-header">
   <div class="inner">
     <div class="hdr-content">
       <div class="hdr-content__el">
         <div class="hero-anime">
-          <h4><?php the_field('hero_sub_title'); ?></h4>
+          <h4>Services Offered</h4>
         </div>
         <div class="hero-anime">
-          <h1><?php the_field('hero_title'); ?></h1>
+          <h1><?php the_title(); ?></h1>
         </div>
         <div class="hr"></div>
         <div class="hero-anime"><p><?php the_field('hero_blurb'); ?></p></div>
       </div>
     </div>
   </div>
-  <div class="bg-el par" data-bg-src="<?php the_field('hero_background');?> "></div>
+  <div class="bg-el par" data-bg-src="<?php the_field('featured_image', $post->ID);?> "></div>
   <div class="stripe"></div>
 </header>
 
@@ -61,42 +58,50 @@
               </div>
           </div>
         </div>
-        <div class="services-two-col__el has-cardstack">
-          <?php 
-            $services = New WP_Query(array(
-              'post_type' => 'services'
-            ));
-            if($services->have_posts()) : while($services->have_posts()) : $services->the_post();
-          ?>
-            <div class="card-services">
-              <div class="icon-nest">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="#000000" class="nc-icon-wrapper"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></g></svg>
+        <div class="services-two-col__el has-cardstack is-full">
+          <div class="card-services">
+            <div class="card-services__inner">
+              <?php the_content(); ?>
+            </div>
+          </div>
+          <div class="social-share">
+              <div class="social-share__el">
+                <span id="share-on">Share: </span>
               </div>
-              <div class="card-services__inner is-center">
-                <h4 class="card-title"><?php the_title(); ?></h4>
-                <div class="hr"></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aut nihil voluptatibus deleniti minima.</p>
-                <div class="cta-parent-card">
-                  <a href="<?php the_permalink();?>" class="cta">
-                  <span class="text">
-                    <span class="text-el text-current">
-                      Learn More
-                    </span>
-                    <span class="text-el text-new">
-                      Learn More
-                    </span>
-                  </span>
-                  </a>
-                </div>
+              <div class="social-share__el">
+                <ul>
+                  <li><a href="">
+                    <?php get_template_part('dist/assets/svgs/facebook'); ?>
+                  </a></li>
+                  <li><a href="">
+                    <?php get_template_part('dist/assets/svgs/twitter'); ?>
+                  </a></li>
+                  <li><a href="">
+                    <?php get_template_part('dist/assets/svgs/mail'); ?>
+                  </a></li>
+                </ul>
               </div>
             </div>
-          <?php endwhile; endif; wp_reset_postdata(); ?>
+            <div class="cta-parent-social">
+              <a href="<?php echo site_url('/services');?>" class="cta">
+                <span class="text">
+                  <span class="text-el text-current">
+                    Go Back
+                  </span>
+                  <span class="text-el text-new">
+                    Go back
+                  </span>
+                </span>
+              </a>
+            </div>
         </div>
       </div>
     </div>
   <div class="blog-featured-strip"></div>
   <div class="spacing spacing--lg"></div>
 </section>
+
+<?php endwhile; endif; wp_reset_postdata(); ?>
 
 
 <?php get_template_part('partials/two-col-with-slider'); ?>
