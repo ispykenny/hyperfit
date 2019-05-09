@@ -5,17 +5,17 @@
   <div class="spacing spacing--lg"></div>
     <div class="inner">
       <div class="has-max is-center content-block">
-        <h3 class="on-green">What our customers</h3>
-        <h1>Have to say about us</h1>
+        <h3 class="on-green"><?php the_field('testimonials_sub_headline', 'options'); ?></h3>
+        <h1><?php the_field('testimonials_headline', 'options'); ?></h1>
       </div>
 
       <div class="two-col-slide-main">
         <div class="two-col-slide-main__el">
           <div class="content-block">
-            <h1>What our customers have to say</h1>
+            <h1><?php the_field('copy_headline', 'options'); ?></h1>
           </div>
           <div class="hr"></div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis dolores fuga saepe illo ex eveniet! Quasi molestiae ex non eveniet quo necessitatibus sint voluptatem aliquid? Sint eum dolorem facere vel.</p>
+          <?php the_field('copy_content', 'options'); ?>
           <div class="btn-group left desktop">
             <button class="slide-item-btn prev">
               <?php get_template_part('dist/assets/svgs/arrow-left'); ?>
@@ -27,15 +27,17 @@
         </div>
         <div class="two-col-slide-main__el">
           <div class="slide-parent-card">
-            <?php for($i = 0; $i < 4; $i++) : ?>
+            <?php $test = get_field('all_testimonials', 'options'); ?>
+
+            <?php foreach($test as $theTest) : ?>
               <div class="slide-card">
                 <div class="slide-card__inner">
-                  <div class="slide-image" style="background-image: url(https://hyperfitmd.com/wp-content/uploads/2017/09/Dr._Guglin_Photo_2.png);"></div>
+                  <div class="slide-image" style="background-image: url(<?php echo $theTest['avatar']; ?>);"></div>
                   <div class="test-area">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis maiores saepe iste alias tempora impedit magnam tenetur est quam qui rem obcaecati temporibus doloremque voluptatem, unde, adipisci reiciendis illo repellat velit. Sequi debitis sunt ratione dolorum, totam mollitia beatae voluptatum!</p>
+                    <?php echo $theTest['message']; ?>
                   </div>
                   <div class="from-test">
-                    <strong>- John Doe</strong>
+                    <strong>- <?php echo $theTest['sender']; ?></strong>
                   </div>
                 </div>
                 <div class="quote">
@@ -46,21 +48,17 @@
                   </svg>
                 </div>
               </div>
-            <?php endfor ?>
+            <?php endforeach; ?>
           </div>
           <div class="btn-group left mobile">
-              <button class="slide-item-btn prev">
-                <?php get_template_part('dist/assets/svgs/arrow-left'); ?>
-              </button>
-              <button class="slide-item-btn">
-              <?php get_template_part('dist/assets/svgs/arrow-right'); ?>
-              </button>
-            </div>
+            <button class="slide-item-btn prev">
+              <?php get_template_part('dist/assets/svgs/arrow-left'); ?>
+            </button>
+            <button class="slide-item-btn">
+            <?php get_template_part('dist/assets/svgs/arrow-right'); ?>
+            </button>
+          </div>
         </div>
-
-    
-
-      
       </div>
     
     </div>

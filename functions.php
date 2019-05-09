@@ -9,9 +9,10 @@
 
 	if (function_exists('acf_add_options_page')) {
 		acf_add_options_page();
-		acf_set_options_page_title('HyperFit Global Values');
+		acf_set_options_page_title('HyperFit');
 		acf_add_options_sub_page('Company Info');
 		acf_add_options_sub_page('Our Practice Element');
+		acf_add_options_sub_page('Testimonials');
 		acf_add_options_sub_page('Pre Nav bar');
 	}
 
