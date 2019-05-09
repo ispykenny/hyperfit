@@ -10,7 +10,7 @@ export default function() {
   let $hasRequestHeight = $hasRequest.height();
   let $mobileChecker = $('.mt-trigger').is(':visible');
   
-  console.log('hello')
+  
   // page-check
   if(!$requestBox.is(":visible")) return;
   console.log($requestBox.is(":visible"))
