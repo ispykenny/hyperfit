@@ -1,5 +1,5 @@
 nav {
-  background: #fff;
+  background: #000;
   position: fixed;
   width: 100%;
   left: 0;
@@ -63,7 +63,7 @@ nav .inner {
   position: relative;
 
   a {
-    color: #000;
+    color: #fff;
     font-weight: 500;
     text-decoration: none;
   }
@@ -76,11 +76,11 @@ nav .inner {
 .parent-nav {
   list-style-type: none;
   margin: 0;
-  padding: 0.2em 0em;
+  padding: 0.8em 0em;
   display: none;
   > li {
     position: relative;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.7em;
     opacity: 0;
     transform: translateY(25px);
     transition: opacity 600ms, transform 900ms ease;
@@ -134,7 +134,7 @@ nav .inner {
 }
 
 .logo {
-  max-width: 120px;
+  max-width: 140px;
   display: inline-block;
   padding-top: 2px;
   position: relative;
@@ -192,27 +192,27 @@ nav .inner {
   top: 50%; right: 0;
   transform: translateY(-50%);
   @include btn-reset();
-  height: 34px;
+  height: 38px;
   width: 45px;
   border-radius: 5px;
-  background: #333;
+  background: $themegreen;
 
   .mt-el {
     height: 2px; 
     width: 55%;
     left: 22.5%;
-    background: white;
+    background: black;
     position: absolute;
     transition: transform 300ms ease-out;
   }
   .mt-top {
-    top: 8px;
+    top: 11px;
   }
   .mt-mid {
-    top: 15px;
+    top: 19px;
   }
   .mt-btm {
-    top: 23px;
+    top: 27px;
   }
 }
 
@@ -224,23 +224,23 @@ nav .inner {
     }
     .mt-top {
       transform: rotate(45deg);
-      top: 15px;
+      top: 19px;
     }
     .mt-mid {
-      top: 15px;
+      top: 19px;
       transform: rotate(-45deg);
       transition: 150ms ease;
     }
     .mt-btm {
       display: none;
-      top: 18px;
+      top: 19px;
     }
   }
 }
 
 .mobile-showing {
   nav {
-    background: white;
+    background: #000;
     > .inner {
       border-bottom: none;
     }
@@ -249,7 +249,7 @@ nav .inner {
 
 @media(min-width: $bp-sm) {
   nav {
-    background: white;
+    background: #000;
   }
   nav > .inner {
     border-bottom: none;
@@ -338,7 +338,7 @@ nav .inner {
   .child-nav {
     display: block;
     position: absolute;
-    background: white;
+    background: #000;
     padding: 2em 1.5em;
     will-change: transform;
     top: 100%;
