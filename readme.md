@@ -14,5 +14,5 @@
 1. ~~Fix slider bubbles on home page.~~
 2. ~~Fix spacing near newsletter section.~~ 
 3. Implement WP Forms into newsletter component.
-4. Implement share to social on blog single.
+4. ~~Implement share to social on blog single.~~
 5. Need higher res images for "Our Practice" page.
