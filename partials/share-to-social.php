@@ -6,13 +6,13 @@
   </div>
   <div class="social-share__el">
     <ul>
-      <li><a class="btn-social" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>">
+      <li><a class="btn-social" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>">
         <?php get_template_part('dist/assets/svgs/facebook'); ?>
       </a></li>
-      <li><a class="btn-social" href="http://twitter.com/share?url=<?php the_permalink() ;?>">
+      <li><a class="btn-social" target="_blank" href="http://twitter.com/share?url=<?php the_permalink() ;?>">
         <?php get_template_part('dist/assets/svgs/twitter'); ?>
       </a></li>
-      <li><a class="btn-social" href="mailto:?subject=Check This Out&amp;body=<?php the_permalink();?>">
+      <li><a class="btn-social" target="_blank" href="mailto:?subject=Check This Out&amp;body=<?php the_permalink();?>">
         <?php get_template_part('dist/assets/svgs/mail'); ?>
       </a></li>
     </ul>
