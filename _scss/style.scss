@@ -7,22 +7,25 @@
 
 body {
   background: #eee;
-  opacity: 1;
+  opacity: 0;
   transition: 1000ms;
-  // &.site-loaded {
-  //   opacity: 1;
-  // }
+  &.site-loaded {
+    opacity: 1;
+  }
 }
+
+
 body::-webkit-scrollbar {
-  width: 1em;
+  width: 0.6em;
 }
 
 body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
 }
 
 body::-webkit-scrollbar-thumb {
 background-color: $themegreen;
+border-radius: 10px;
 outline: 1px solid $themegreen;
 }
 
