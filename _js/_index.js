@@ -33,3 +33,6 @@ load();
 
 import services from './services-page';
 services();
+
+import util from './_util';
+util()

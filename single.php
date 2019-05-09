@@ -36,25 +36,7 @@ $newCatArr = [];
     <article>
       <?php the_content(); ?>
     </article>
-
-    <div class="social-share">
-      <div class="social-share__el">
-        <span id="share-on">Share: </span>
-      </div>
-      <div class="social-share__el">
-        <ul>
-          <li><a href="">
-            <?php get_template_part('dist/assets/svgs/facebook'); ?>
-          </a></li>
-          <li><a href="">
-            <?php get_template_part('dist/assets/svgs/twitter'); ?>
-          </a></li>
-          <li><a href="">
-            <?php get_template_part('dist/assets/svgs/mail'); ?>
-          </a></li>
-        </ul>
-      </div>
-    </div>
+    <?php get_template_part('partials/share-to-social'); ?>
     <div class="cta-parent-social">
       <a href="<?php echo site_url('/blog');?>" class="cta">
         <span class="text">

@@ -12308,6 +12308,10 @@ var _servicesPage = __webpack_require__(27);
 
 var _servicesPage2 = _interopRequireDefault(_servicesPage);
 
+var _util = __webpack_require__(28);
+
+var _util2 = _interopRequireDefault(_util);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _jquery2.default;
@@ -12336,6 +12340,8 @@ window.jQuery = _jquery2.default;
 (0, _load2.default)();
 
 (0, _servicesPage2.default)();
+
+(0, _util2.default)();
 
 /***/ }),
 /* 7 */
@@ -15070,6 +15076,53 @@ exports.default = function () {
     'scroll': updatingScrollPos,
     'resize': collectInfo,
     'load': sniper
+  });
+};
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var _this = this;
+
+  var $socialBtn = $('.btn-social');
+
+  $.centeredPopup = function (options) {
+    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left,
+        dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top,
+        width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width,
+        height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height,
+        left = width / 2 - options.width / 2 + dualScreenLeft,
+        top = height / 2 - options.height / 2 + dualScreenTop,
+        newWindow = window.open(options.url, options.title, 'scrollbars=yes, width=' + options.width + ', height=' + options.height + ', top=' + top + ', left=' + left);
+    if (window.focus) {
+      newWindow.focus();
+    }
+  };
+
+  var shareSocial = function shareSocial(event) {
+    console.log("working");
+    event.preventDefault();
+    var $t = $(event.currentTarget);
+
+    $.centeredPopup({
+      url: $(_this).attr('href'),
+      title: 'Share',
+      width: 400,
+      height: 400
+    });
+  };
+
+  $socialBtn.on('click', function (event) {
+    return shareSocial(event);
   });
 };
 
