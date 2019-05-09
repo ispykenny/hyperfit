@@ -7,11 +7,11 @@
 
 body {
   background: #eee;
-  opacity: 0;
+  opacity: 1;
   transition: 1000ms;
-  &.site-loaded {
-    opacity: 1;
-  }
+  // &.site-loaded {
+  //   opacity: 1;
+  // }
 }
 body::-webkit-scrollbar {
   width: 1em;
