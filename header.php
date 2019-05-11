@@ -88,28 +88,7 @@
       </button>
     </div>
     <div class="nav-section has-nav-el">
-      <ul class="parent-nav">
-        <li><a href="<?php echo site_url(''); ?>">Home</a></li>
-        <li><a href="<?php echo site_url('/our-practice'); ?>">Our Practice</a></li>
-        <li class="has-dropdown"><a href="#0" class="dropdown-trigger">Services <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 6 7"><path d="M391.545,543l-3.511,6h7Z" transform="translate(549 -388.034) rotate(90)" fill="#87b840"/></svg></a>
-
-          <ul class="child-nav">
-            <li><a href="">Preventive & Functional Medicine</a></li>
-            <li><a href="">Hair Transplantation</a></li>
-            <li><a href="">Advanced Diagnostics</a></li>
-            <li><a href="">Bio Identical Hormone Optimization</a></li>
-            <li><a href="">Weight Loss & Nutrition Counseling</a></li>
-            <li><a href="">Stress Management</a></li>
-            <li><a href="">IV Nutrient Therapy</a></li>
-            <li><a href="">New and Aesthetic Services</a></li>
-            <li><a href="">Stem Cell Therapy and Regenerative Medicine</a></li>
-          </ul>
-      
-        </li>
-        <li><a href="<?php echo site_url('/faqs');?>">Faqs</a></li>
-        <li><a href="<?php echo site_url('blog');?>">Blog</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
+      <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </div>
   </div>
 </nav>
