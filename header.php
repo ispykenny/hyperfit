@@ -87,7 +87,7 @@
         <span class="mt-el mt-btm"></span>
       </button>
     </div>
-    <div class="nav-section has-nav-el">
+    <div class="nav-section has-nav-el" id="main-nav-el">
       <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </div>
   </div>
