@@ -50,10 +50,10 @@ $newCatArr = [];
       </a>
     </div>
   </div>
-  <div class="spacing spacing--lg"></div>
+  <!-- <div class="spacing spacing--lg"></div> -->
 </section>
 
-
+<?php get_template_part('partials/news-letter'); ?>
 
 
 
