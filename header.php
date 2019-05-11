@@ -78,7 +78,7 @@
   <div class="inner main-nav">
     <div class="nav-section">
       <a href="<?php echo site_url('');?>" class="logo">
-        <img src="<?php the_field('logo', 'options') ?>" alt="">
+        <img src="<?php the_field('logo', 'options') ?>" alt="Hyperfit MD Logo">
       </a>
       <button class="mt-trigger">
         <span class="hamburger sr-only">Menu</span>
