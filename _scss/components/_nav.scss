@@ -10,52 +10,8 @@ nav {
   max-width: 1920px;
   left: 50%;
   transform: translateX(-50%);
-
-}
-.pre-nav {
-  display: none;
-  background-image: linear-gradient(90deg, #A7E94C, $themegreen);
-  .inner {
-    padding: 1em 0em;
-  }
 }
 
-.pre-nav-section .local-text {
-  font-size: 15px;
-  color: white;
-  display: none;
-}
-.local-text-trim {
-  color: white;
-  font-size: 15px;
-}
-
-.pre-nav-section svg {
-  top: 5px;
-  position: relative;
-}
-.contact-flex__el {
-  width: 50%;
-}
-.pre-nav-section {
-  text-align: center;
-  &:nth-child(2) {
-  margin-top: 1em;
-  }
-}
-
-
-.contact-flex {
-  display: flex;
-  justify-content: center;  
-  
-  &__el {
-    width: 50%;
-  }
-  &__el:nth-child(2) {
-    width: 50%;
-  }
-}
 
 nav .inner {
   @include clearfix();
@@ -71,8 +27,141 @@ nav .inner {
 
 .nav-section {
   position: relative;
+
+  @media(min-width: $bp-md) {
+    display: inline-block;
+    
+    &.has-nav-el {
+      float: right;
+    }
+  }
 }
 
+#menu-main-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.4em 0em 0.4em 0em;
+  display: none;
+  > li {
+    padding-bottom: 0.5em;
+    &:first-of-type {
+      margin-left: 0em;
+    }
+    &:last-of-type {
+      margin-bottom: 0em;
+    }
+    a {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: auto; right: 0;
+        width: 0%;
+        height: 2px;
+        background: $themegreen;
+        transition: all 200ms ease;
+      }
+      &:hover {
+        &:after {
+          width: 100%;
+          left: 0; right: auto;
+        }
+      }
+    }
+    &.current_page_item {
+      a:after {
+        width: 100%;
+      }
+    }
+  }
+
+  @media(min-width: $bp-md) {
+    margin: 0.8em 0em 0em 0em;
+    display: block !important;
+    > li {
+      display: inline-block;
+      position: relative;
+      margin-left: 2.4em;
+      margin-bottom: 0em;
+      padding-bottom: 0em;
+      &:first-of-type {
+        margin-left: 0em;
+      }
+    }
+  }
+}
+
+.sub-menu {
+  background: white;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0.7em;
+  font-size: 14px;
+  display: none;
+  padding-top: 0.4em;
+  > li {
+    margin-bottom: 0.5em;
+    &:last-of-type {
+      margin-bottom: 0em;
+    }
+    a {
+      position: relative;
+      color: #666;
+      transition: color 300ms ease;
+      &:hover {
+        color: black;
+      }
+    }
+    @media(min-width: $bp-md) { 
+      margin-bottom: 1em; 
+      &:first-of-type {
+        margin-top: 0.3em;
+      }
+      &:last-of-type {
+        margin-bottom: 0em;
+      }
+      a {
+        color: #000;
+      }
+    }
+  }
+
+  @media(min-width: $bp-md) {
+    display: block !important;
+    position: absolute;
+    top: 100%;
+    width: 480%;
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%, 2%);
+    box-shadow: 0px 0px 30px rgba(black, 0.1);
+    padding: 2em 1.5em;
+    visibility: hidden;
+    transition: transform 400ms ease;
+
+    &.is-visible {
+      visibility: visible;
+      transform: translate(-50%, 0%);
+    }
+  }
+}
+
+.drop-crt {
+  position: relative;
+  margin-left: 8px;
+  top: -1px;
+  svg {
+    position: relative;
+    transition: all 200ms ease;
+  }
+}
+
+.show-dropdown {
+  .drop-crt svg {
+    transform: rotate(91deg);
+  }
+}
 
 .logo {
   max-width: 120px;
@@ -148,56 +237,17 @@ nav .inner {
   nav > .inner {
     border-bottom: none;
   }
-  .pre-nav {
-    display: block;
-    background: $themegreen;
-    .inner {
-      padding: 1em 0em;
-    }
-  }
+  
   .logo {
     padding-top: 0px;
     max-width: 180px;
   }
-  
-  .pre-nav-section {
-    display: inline-block;
-    &:nth-child(2) {
-     float: right;
-     margin-top: 0em;
-    }
-    &:first-of-type {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
 
-  .contact-flex {
-    display: flex;
-    &__el {
-      width: auto;
-      margin-top: 0em;
-    }
-    &__el:nth-child(2) {
-      margin-left: 30px;
-      width: auto;
-    }
-  }
 }
 
 
 @media(min-width: $bp-md) {
-  .pre-nav-section .local-text {
-    font-size: 15px;
-    color: white;
-    display: inline-block;
-  }
-  .local-text-trim {
-    color: white;
-    font-size: 15px;
-    display: none;
-  }
+
   nav {
     font-size: 15px;
   }

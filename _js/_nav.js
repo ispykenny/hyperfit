@@ -4,9 +4,24 @@ export default function() {
   let $downDown = $('.dropdown-trigger');
   let downDownShowing = false;
   let mobileMenu = false;
-  let $hasDropDown = $('.has-dropdown');
-  let $parentNav = $('.parent-nav');
+  let $parentNav = $('#menu-main-nav');
   let $mTrigger = $('.mt-trigger');
+  let $dropDownEl = $('.menu-item-has-children');
+  let $childNav = $('.sub-menu');
+  let $speed = 150;
+
+  let modifyDropDownNav = () => {
+    $dropDownEl.each((i, $element) => {
+      $($element).find('a').first().append(`
+        <span class="drop-crt">
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 6 7"><path d="M391.545,543l-3.511,6h7Z" transform="translate(549 -388.034) rotate(90)" fill="#87b840"></path></svg>
+        </span>
+      `)
+    })
+  }
+
+
+  $(window).on('load', modifyDropDownNav);
 
   if($('.request-box').is(":visible")) {
     $('.pre-nav').hide();
@@ -21,10 +36,21 @@ export default function() {
 
   let dropDown = event => {
     event.preventDefault();
+    let $element = $(event.currentTarget);
     if(!downDownShowing) { 
-      $body.addClass('show-dropdown')
+      $body.addClass('show-dropdown');
+      if($mTrigger.is(":visible")) {
+        $element.parent().find('.sub-menu').slideDown($speed)
+      } else {
+        $element.parent().find('.sub-menu').addClass('is-visible');
+      }
        downDownShowing = true;
     } else {
+      if($mTrigger.is(":visible")) {
+        $element.parent().find('.sub-menu').slideUp($speed)
+      } else {
+        $element.parent().find('.sub-menu').removeClass('is-visible');
+      }
       $body.removeClass('show-dropdown')
        downDownShowing = false;
     }
@@ -32,7 +58,12 @@ export default function() {
 
   let killdropdown = () => {
     downDownShowing = false;
-    $body.removeClass('show-dropdown');
+    if($mTrigger.is(":visible")) {
+      $childNav.slideUp($speed);
+    } else {
+      $childNav.removeClass('is-visible');
+    }
+    $body.removeClass('show-dropdown')
   }
 
   let showMobileNav = () => {
@@ -49,8 +80,8 @@ export default function() {
     }
   }
 
-  $downDown.on('click', event => dropDown(event))
-  $hasDropDown.on('mouseleave', killdropdown);
+  $dropDownEl.on('click', event => dropDown(event))
+  $dropDownEl.on('mouseleave', killdropdown);
   $mTrigger.on('click', showMobileNav);
 
 }

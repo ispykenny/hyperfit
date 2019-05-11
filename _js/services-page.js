@@ -13,7 +13,7 @@ export default function() {
   
   // page-check
   if(!$requestBox.is(":visible")) return;
-  console.log($requestBox.is(":visible"))
+
 
   let sniper = () => {
     if($mobileChecker) return;

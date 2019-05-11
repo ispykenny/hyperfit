@@ -12404,9 +12404,19 @@ exports.default = function () {
   var $downDown = $('.dropdown-trigger');
   var downDownShowing = false;
   var mobileMenu = false;
-  var $hasDropDown = $('.has-dropdown');
-  var $parentNav = $('.parent-nav');
+  var $parentNav = $('#menu-main-nav');
   var $mTrigger = $('.mt-trigger');
+  var $dropDownEl = $('.menu-item-has-children');
+  var $childNav = $('.sub-menu');
+  var $speed = 150;
+
+  var modifyDropDownNav = function modifyDropDownNav() {
+    $dropDownEl.each(function (i, $element) {
+      $($element).find('a').first().append('\n        <span class="drop-crt">\n          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 6 7"><path d="M391.545,543l-3.511,6h7Z" transform="translate(549 -388.034) rotate(90)" fill="#87b840"></path></svg>\n        </span>\n      ');
+    });
+  };
+
+  $(window).on('load', modifyDropDownNav);
 
   if ($('.request-box').is(":visible")) {
     $('.pre-nav').hide();
@@ -12421,10 +12431,21 @@ exports.default = function () {
 
   var dropDown = function dropDown(event) {
     event.preventDefault();
+    var $element = $(event.currentTarget);
     if (!downDownShowing) {
       $body.addClass('show-dropdown');
+      if ($mTrigger.is(":visible")) {
+        $element.parent().find('.sub-menu').slideDown($speed);
+      } else {
+        $element.parent().find('.sub-menu').addClass('is-visible');
+      }
       downDownShowing = true;
     } else {
+      if ($mTrigger.is(":visible")) {
+        $element.parent().find('.sub-menu').slideUp($speed);
+      } else {
+        $element.parent().find('.sub-menu').removeClass('is-visible');
+      }
       $body.removeClass('show-dropdown');
       downDownShowing = false;
     }
@@ -12432,6 +12453,11 @@ exports.default = function () {
 
   var killdropdown = function killdropdown() {
     downDownShowing = false;
+    if ($mTrigger.is(":visible")) {
+      $childNav.slideUp($speed);
+    } else {
+      $childNav.removeClass('is-visible');
+    }
     $body.removeClass('show-dropdown');
   };
 
@@ -12451,10 +12477,10 @@ exports.default = function () {
     }
   };
 
-  $downDown.on('click', function (event) {
+  $dropDownEl.on('click', function (event) {
     return dropDown(event);
   });
-  $hasDropDown.on('mouseleave', killdropdown);
+  $dropDownEl.on('mouseleave', killdropdown);
   $mTrigger.on('click', showMobileNav);
 };
 
@@ -12493,7 +12519,7 @@ exports.default = function () {
   var scrollTicker = function scrollTicker() {
     if (didScroll) {
       scrollHomeHero();
-      if ($winOff > lastScroll && $winOff >= 5 && !$('.request-box').is(':visible')) {
+      if ($winOff > lastScroll && $winOff >= 5 && !$('.request-box').is(':visible') && !$('.mt-trigger').is(":visible")) {
         $nav.css({
           'transform': 'translate(-' + 50 + '%,-' + $preNav.outerHeight() + 'px)'
         });
@@ -15013,7 +15039,6 @@ exports.default = function () {
 
   // page-check
   if (!$requestBox.is(":visible")) return;
-  console.log($requestBox.is(":visible"));
 
   var sniper = function sniper() {
     if ($mobileChecker) return;

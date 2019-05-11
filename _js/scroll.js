@@ -24,7 +24,7 @@ export default function() {
   let scrollTicker = () => {
     if(didScroll) {
       scrollHomeHero();
-      if($winOff > lastScroll && $winOff >= 5 && !$('.request-box').is(':visible')) {
+      if($winOff > lastScroll && $winOff >= 5 && !$('.request-box').is(':visible') && !$('.mt-trigger').is(":visible")) {
         $nav.css({
           'transform': 'translate(-'+ 50 + '%,-'+ $preNav.outerHeight() +'px)'
         })
