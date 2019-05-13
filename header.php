@@ -62,14 +62,16 @@
       </div>
 
       <div class="pre-nav-section">
-        <a href="" class="cta is-white">
+        <?php $requestCta = get_field('request_appointment_cta', 'options');
+        ?>
+        <a href="<?php echo $requestCta['url'];?>" class="cta is-white" target="<?php echo $requestCta['target'];?>">
           <span class="text">
             <span class="text-el text-current">
-                Request Appointment
+              <?php echo $requestCta['title']; ?>
             </span>
             <span class="text-el text-new">
-                Request Appointment
-              </span>
+              <?php echo $requestCta['title']; ?>
+            </span>
           </span>
         </a>
       </div>

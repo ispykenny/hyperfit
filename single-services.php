@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
+
+
+
 <header class="standard-header">
   <div class="inner">
     <div class="hdr-content">
@@ -27,17 +30,17 @@
         <div class="services-two-col__el has-request">
           <div class="request-box">
             <div class="request-box__inner content-block">
-              <h1>Request Appointment</h1>
+              <h1><?php the_field('request_box_title'); ?></h1>
               <div class="hr"></div>
-              <p>We are proud to offer age management and preventative care treatments to enhance the lives.</p>
+              <p><?php the_field('request_box_blurb'); ?></p>
               <div class="cta-parent-services">
-                <a href="" class="cta">
+                <a href="<?php the_field('request_box_cta')['url']; ?>" class="cta">
                 <span class="text">
                   <span class="text-el text-current">
-                    Book Now
+                    <?php the_field('request_box_cta')['title']; ?>
                   </span>
                   <span class="text-el text-new">
-                    Book Now
+                  <?php the_field('request_box_cta')['title']; ?>
                   </span>
                 </span>
                 </a>

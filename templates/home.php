@@ -13,7 +13,7 @@
 				<div class="hero-anime"><p><?php the_field('hero_blurb'); ?></p></div>
 				<div class="cta-el hero-anime">
 					<?php $primaryLink = get_field('hero_cta_primary'); ?>
-					<a href="<?php echo $primaryLink['url'];?>" class="cta">
+					<a href="<?php echo $primaryLink['url'];?>" class="cta" target="<?php echo $primaryLink['target'];?>">
 						<span class="text">
 							<span class="text-el text-current">
 							<?php echo $primaryLink['title'];?>
@@ -26,7 +26,7 @@
 					<?php $showSecondary = get_field('show_secondary_cta');
 						$secondaryCta = get_field('secondary_cta');
 						if($showSecondary) {?>
-							<a href="<?php echo $secondaryCta['url'];?>"><?php echo $secondaryCta['title'];?><svg xmlns="http://www.w3.org/2000/svg" width="7.818" height="9" viewBox="0 0 7.818 9"><path d="M392.548,543l-4.514,7.818h9Z" transform="translate(550.818 -388.034) rotate(90)" fill="#fff"/></svg></a>
+							<a href="<?php echo $secondaryCta['url'];?>" target="<?php echo $secondaryCta['target'];?>"><?php echo $secondaryCta['title'];?><svg xmlns="http://www.w3.org/2000/svg" width="7.818" height="9" viewBox="0 0 7.818 9"><path d="M392.548,543l-4.514,7.818h9Z" transform="translate(550.818 -388.034) rotate(90)" fill="#fff"/></svg></a>
 						<?php } ;?>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 						<h4><?php echo $theSlideEl['title']; ?></h4>
 						<div class="hr"></div>
 						<p><?php echo $theSlideEl['blurb']; ?></p>
-						<a href="<?php echo $theSlideEl['cta']['url'];?>" class="cta">
+						<a href="<?php echo $theSlideEl['cta']['url'];?>" class="cta" target="<?php echo $theSlideEl['target'];?>">
 							<span class="text">
 								<span class="text-el text-current">
 									<?php echo $theSlideEl['cta']['title'];?>
@@ -98,7 +98,7 @@
 				<?php the_field('two_column_blurb'); ?>
 				<div class="manage-num-btn">
 					<?php $twoColCta = get_field('two_column_cta'); ?>
-					<a href="<?php echo $twoColCta['url'];?> " class="cta">
+					<a href="<?php echo $twoColCta['url'];?> " class="cta" target="<?php echo $twoColCta['target'];?>">
 						<span class="text">
 							<span class="text-el text-current">
 								<?php echo $twoColCta['title'];?> 

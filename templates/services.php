@@ -30,17 +30,18 @@
         <div class="services-two-col__el has-request">
           <div class="request-box">
             <div class="request-box__inner content-block">
-              <h1>Request Appointment</h1>
+              <h1><?php the_field('request_box_title'); ?></h1>
               <div class="hr"></div>
-              <p>We are proud to offer age management and preventative care treatments to enhance the lives.</p>
+              <p><?php the_field('request_box_blurb'); ?></p>
               <div class="cta-parent-services">
-                <a href="" class="cta">
+                <?php $theUrl = get_field('request_box_cta'); ?>
+                <a href="<?php echo $theUrl['url']; ?>" class="cta">
                 <span class="text">
                   <span class="text-el text-current">
-                    Book Now
+                    <?php echo $theUrl['title']; ?>
                   </span>
                   <span class="text-el text-new">
-                    Book Now
+                    <?php echo $theUrl['title']; ?>
                   </span>
                 </span>
                 </a>
@@ -75,7 +76,7 @@
               <div class="card-services__inner is-center">
                 <h4 class="card-title"><?php the_title(); ?></h4>
                 <div class="hr"></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aut nihil voluptatibus deleniti minima.</p>
+                <p><?php echo wp_trim_words( get_the_content(), 20, '...' ); ?></p>
                 <div class="cta-parent-card">
                   <a href="<?php the_permalink();?>" class="cta">
                   <span class="text">
