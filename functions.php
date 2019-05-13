@@ -23,12 +23,10 @@
 	    acf_set_options_page_capability( 'manage_options' );
 	}
 
-	add_theme_support( 'hero-images', array(
-		'width' => 1920,
-		'height' => 1080
-	) );
+	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'hero-image size', 1920, 1080 );
+
+	add_image_size( 'hero-image', 1920, 1080 , true);
 	
 	// admin footer message, shown in bottom left on all screens
 	function add_admin_footer() {
