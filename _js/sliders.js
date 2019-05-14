@@ -32,7 +32,14 @@ export default function() {
       dragThreshold: 10,
       pageDots: false
     });
+
+    $blogSlide.each((item, $element) => {
+      if($($element).find('.blog-slide-item').length <= 1) {
+        $($element).parents('.blog-block').find('.btn-group').hide();
+      }
+    })
   }
+
 
   let checkMobile = () => {
     if($mobileEl.is(':visible')) {

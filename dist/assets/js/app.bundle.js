@@ -12583,6 +12583,12 @@ exports.default = function () {
       dragThreshold: 10,
       pageDots: false
     });
+
+    $blogSlide.each(function (item, $element) {
+      if ($($element).find('.blog-slide-item').length <= 1) {
+        $($element).parents('.blog-block').find('.btn-group').hide();
+      }
+    });
   }
 
   var checkMobile = function checkMobile() {

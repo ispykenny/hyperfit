@@ -4,13 +4,10 @@
   &__el {
     position: relative;
     &:first-of-type {
-      // width: 40%;
       display: none;
     }
     &:last-of-type {
       width: 100%;
-      // width: 55%;
-      // margin-left: 5%;
     }
     @media(min-width: $bp-lg) {
       &:first-of-type {
@@ -36,7 +33,6 @@
   }
   &.is-full {
     display: block;
-    // width: 55%;
     width: 100%;
     @media(min-width: $bp-lg) {
       width: 55%;
@@ -116,16 +112,13 @@
   }
   li {
     margin-right: 20px;
-    // svg {
-    //   fill: white;
-    //   stroke-width: 0px;
-    // }
-    // path, rect {
-    //   stroke: white !important;
-    // }
     &:last-of-type {
       margin-right: 0em;
     }
   }
   
+}
+
+.featured-offerings {
+  padding-top: 4em;
 }

@@ -11,7 +11,6 @@ export default function() {
     didScroll = true;
   }
 
-  
 
   let scrollHomeHero = () => {
     if($bgEl) {
