@@ -1,0 +1,118 @@
+.two-col-contact {
+  @media(min-width: $bp-lg) {
+    display: flex;
+  }
+}
+
+.two-col-contact__el {
+  max-width: 600px;
+  margin: auto;
+  &:first-of-type {
+    margin-bottom: 4em;
+  }
+  @media(min-width: $bp-lg) {
+    max-width: 100%;
+    margin: 0;
+    &:first-of-type {
+      width: 46%;
+      margin-right: 4%;
+      margin-bottom: 0em;
+    }
+    &:last-of-type {
+      width: 50%;
+      margin-left: 0%;
+    }
+  }
+}
+
+.contact-info-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 3em;
+}
+
+
+.two-col-contact  li a {
+  color: black;
+  text-decoration: none;
+}
+.two-col-contact .local-text {
+  top: -4px;
+  position: relative;
+}
+
+
+
+
+.two-col-contact hr {
+  height: 1px;
+  background: #f2f2f2;
+  border: none;
+  margin: 2em 0em;
+  
+}
+
+.follow-contact {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 1em;
+  display: flex;
+  li {
+    margin-right: 1.5em;
+    &:last-of-type {
+      margin-right: 0em;
+    }
+  }
+}
+
+
+// footer section
+.contact-logo {
+  max-width: 200px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+.contact-form {
+  padding: 3em 2em 3em 2em;
+  background: white;
+  box-shadow: 0px 0px 30px rgba(black, 0.2);
+  z-index: 999;
+  border-radius: 5px;
+  @media(min-width: $bp-lg) {
+    margin-top: -100px;
+  }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="number"],
+  select
+  {
+    height: 45px !important; 
+    max-width: 100% !important;
+    border: none !important;
+    background: #f2f2f2 !important;
+    font-size: 16px !important;
+    margin-bottom: 1em !important;
+  }
+  textarea {
+    background: #f2f2f2 !important;
+    font-size: 16px !important;
+    border: none !important;
+    resize: none !important;
+  }
+  .wpforms-submit {
+    border: none !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    background: $themegreen !important;
+    color: white !important;
+    padding: 1em 3.2em !important;
+    border-radius: 4px !important;
+
+  }
+}
+
