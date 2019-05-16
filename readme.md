@@ -16,7 +16,7 @@
 3. Implement WP Forms into newsletter component.
 4. ~~Implement share to social on blog single.~~
 5. Need higher res images for "Our Practice" page. - Requested.
-6. Fix Nav Bar reponsiveness
+6. ~~Fix Nav Bar reponsiveness~~
 
 
 # Revisions

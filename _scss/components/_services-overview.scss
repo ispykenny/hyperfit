@@ -1,0 +1,49 @@
+
+.manage-number {
+  .bar-image-services {
+    position: absolute;
+    background: white;
+    top: 0; 
+    height: 100%;
+    width: 25%;
+    overflow: hidden;
+    left: auto;
+    right: 0;
+    transform: skew(-20deg);
+    transform-origin: bottom right;
+  }
+  .mini-bar-services {
+    background-color: $themegreen;
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    bottom: 0;
+    transform: skew(40deg);
+    transform-origin: bottom left;
+  }
+  &.is-reversed {
+    .bar-image-services {
+      position: absolute;
+      background: white;
+      top: 0; 
+      height: 100%;
+      width: 25%;
+      overflow: hidden;
+      left: 0;
+      right: auto;
+      transform: skew(20deg);
+      transform-origin: bottom left;
+    }
+    .mini-bar-services {
+      background-color: $themegreen;
+      position: absolute;
+      height: 60%;
+      width: 100%;
+      bottom: 0;
+      transform: skew(-40deg);
+      transform-origin: bottom right;
+    }
+  }
+}
+
+

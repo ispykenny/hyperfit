@@ -23,69 +23,13 @@
   <div class="stripe"></div>
 </header>
 
-<section>
-  <div class="spacing spacing--lg"></div>
-    <div class="inner">
-      <div class="services-two-col">
-        <div class="services-two-col__el has-request">
-          <div class="request-box">
-            <div class="request-box__inner content-block">
-              <h1><?php the_field('request_box_title'); ?></h1>
-              <div class="hr"></div>
-              <p><?php the_field('request_box_blurb'); ?></p>
-              <div class="cta-parent-services">
-                <a href="<?php the_field('request_box_cta')['url']; ?>" class="cta">
-                <span class="text">
-                  <span class="text-el text-current">
-                    <?php the_field('request_box_cta')['title']; ?>
-                  </span>
-                  <span class="text-el text-new">
-                  <?php the_field('request_box_cta')['title']; ?>
-                  </span>
-                </span>
-                </a>
-              </div>
-            </div>
-            <div class="social-request-box">
-                <ul>
-                  <li id="follow-rb">Follow Us</li>
-                  <?php $socialLinksFooter = get_field('social_links', 'options');
-                    foreach($socialLinksFooter as $sslF) { ?>
-                    <li>
-                      <a href="<?php echo $sslF['link'];?>" target="_blank">
-                        <?php  get_template_part('dist/assets/svgs/'.$sslF['icon']); ?>
-                      </a>
-                    </li>
-                  <?php } ?>
-                </ul>
-              </div>
-          </div>
-        </div>
-        <div class="services-two-col__el has-cardstack is-full">
-          <div class="card-services">
-            <div class="card-services__inner">
-              <?php the_content(); ?>
-            </div>
-          </div>
-            <?php get_template_part('partials/share-to-social'); ?>
-            <div class="cta-parent-social">
-              <a href="<?php echo site_url('/services');?>" class="cta">
-                <span class="text">
-                  <span class="text-el text-current">
-                    Go Back
-                  </span>
-                  <span class="text-el text-new">
-                    Go back
-                  </span>
-                </span>
-              </a>
-            </div>
-        </div>
-      </div>
-    </div>
-  <div class="blog-featured-strip"></div>
-  <div class="spacing spacing--lg"></div>
-</section>
+<?php get_template_part('partials/services-components/overview'); ?>
+
+<?php get_template_part('partials/services-components/how-it-works'); ?>
+
+
+<?php get_template_part('partials/services-components/features-benefits-two-col'); ?>
+
 
 <?php endwhile; endif; wp_reset_postdata(); ?>
 
