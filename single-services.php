@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
+<?php 
+  $overview = get_field('show_overview'); 
+  $howItWorks = get_field('show_how_it_works');
+  $featuresAndBenefits = get_field('show_features_and_benefits');
+?>
 
 
 
@@ -23,12 +28,24 @@
   <div class="stripe"></div>
 </header>
 
-<?php get_template_part('partials/services-components/overview'); ?>
+<?php 
+  if($overview) :
+    get_template_part('partials/services-components/overview');
+  endif;
+?>
 
-<?php get_template_part('partials/services-components/how-it-works'); ?>
+<?php 
+  if($howItWorks) :
+    get_template_part('partials/services-components/how-it-works'); 
+  endif;
+?>
 
 
-<?php get_template_part('partials/services-components/features-benefits-two-col'); ?>
+<?php 
+  if($featuresAndBenefits) :
+    get_template_part('partials/services-components/features-benefits-two-col');
+  endif;
+?>
 
 
 <?php endwhile; endif; wp_reset_postdata(); ?>

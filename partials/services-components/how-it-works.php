@@ -5,10 +5,14 @@
   <div class="spacing spacing--lg"></div>
   <div class="inner">
     <div class="has-max is-center content-block">
-      <h1 class="spacing-btn">How It Works</h1>
+      <h1 class="spacing-btn"><?php the_field('how_it_works_title'); ?></h1>
     </div>
     <div class="four-column-icon-section on-light">
-      <?php for($i = 0; $i < 4; $i++) : ?>
+
+      <?php 
+        $works = get_field('how_it_works_item');
+        foreach($works as $theWorks) : 
+      ?>
         <div class="icon-section-element">
           <div class="icon-section-element__inner">
             <div class="four-icon">
@@ -16,11 +20,11 @@
             </div>
           </div>
           <div class="icon-section-element__inner">
-            <p>Value Prop</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus iure similique optio repudiandae! Corporis incidunt doloremque repellat, natus quos accusantium? Reiciendis laudantium eius.</p>
+            <p><?php echo $theWorks['title']; ?></p>
+            <?php echo $theWorks['blurb']; ?>
           </div>
         </div>
-      <?php endfor; ?>
+        <?php endforeach; ?>
     </div>
   </div>
   <div class="spacing spacing--lg"></div>
