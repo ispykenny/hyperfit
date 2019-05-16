@@ -29,7 +29,7 @@ nav .inner {
 .nav-section {
   position: relative;
 
-  @media(min-width: $bp-md) {
+  @media(min-width: 880px) {
     display: inline-block;
     
     &.has-nav-el {
@@ -77,7 +77,7 @@ nav .inner {
     }
   }
 
-  @media(min-width: $bp-md) {
+  @media(min-width: 880px) {
     margin: 0.8em 0em 0em 0em;
     display: block !important;
     > li {
@@ -114,7 +114,7 @@ nav .inner {
         color: black;
       }
     }
-    @media(min-width: $bp-md) { 
+    @media(min-width: 880px) { 
       margin-bottom: 1em; 
       &:first-of-type {
         margin-top: 0.3em;
@@ -128,7 +128,7 @@ nav .inner {
     }
   }
 
-  @media(min-width: $bp-md) {
+  @media(min-width: 880px) {
     display: block !important;
     position: absolute;
     top: 100%;
@@ -231,7 +231,7 @@ nav .inner {
   }
 }
 
-@media(min-width: $bp-sm) {
+@media(min-width: 880px) {
   nav {
     background: white;
   }
@@ -247,7 +247,7 @@ nav .inner {
 }
 
 
-@media(min-width: $bp-md) {
+@media(min-width: 880px) {
 
   nav {
     font-size: 15px;
