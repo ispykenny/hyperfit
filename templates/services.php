@@ -163,7 +163,8 @@
 
 <div class="request-app-mobile">
   <div class="cta-parent-mobile">
-    <a href="" class="cta">Request Appointment</a>
+    <?php $ctaLink = get_field('request_appointment_cta', 'options');?>
+    <a href="<?php echo $ctaLink['url'];?>" class="cta" <?php echo $ctaLink['target'];?>>Request Appointment</a>
   </div>
 </div>
 <?php get_footer(); ?>

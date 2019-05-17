@@ -5,6 +5,7 @@
   $overview = get_field('show_overview'); 
   $howItWorks = get_field('show_how_it_works');
   $featuresAndBenefits = get_field('show_features_and_benefits');
+  $faq = get_field('show_faq');
 ?>
 
 
@@ -47,6 +48,14 @@
   endif;
 ?>
 
+<?php 
+  if($faq) : 
+    get_template_part('partials/services-components/faq');
+  endif;
+
+?>
+
+
 
 <?php endwhile; endif; wp_reset_postdata(); ?>
 
@@ -57,7 +66,8 @@
 
 <div class="request-app-mobile">
   <div class="cta-parent-mobile">
-    <a href="" class="cta">Request Appointment</a>
+    <?php $ctaLink = get_field('request_appointment_cta', 'options'); var_dump($ctaLink); ?>
+    <a href="<?php echo $ctaLink['link'];?>" class="cta" <?php echo $ctaLink['target'];?>>Request Appointment</a>
   </div>
 </div>
 <?php get_footer(); ?>
