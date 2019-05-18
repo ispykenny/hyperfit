@@ -2,7 +2,7 @@
   /* Template Name: Services Landing */
   get_header();
   $root = get_template_directory_uri();
-  $hasFeatured = true;
+  $hasFeatured = get_field('has_featured_services');
 ?>
 
 <header class="standard-header">
@@ -29,34 +29,41 @@
   <div class="spacing spacing--lg"></div>
   <div class="inner">
     <div class="has-max is-center content-block">
-			<h3 class="on-green">Sub Headline</h3>
-			<h1>Featured Services</h1>
+			<h3 class="on-green"><?php the_field('features_sub_title'); ?></h3>
+			<h1><?php the_field('features_title'); ?></h1>
 			<span class="hr"></span>
-			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi dignissimos placeat delectus quam deleniti? Aliquam doloremque placeat temporibus tenetur excepturi!</p>
+			<p><?php the_field('features_blurb'); ?></p>
 		</div>
 
     <div class="featured-offerings">
       <div class="blog-block">
         <div class="blog-slide-parent">
-         <?php for($i = 0; $i < 3; $i++) : ?>
+          <?php 
+            $featured = get_field('featured_services'); 
+            foreach($featured as $postE) :
+            $base = $postE['featured_service'];
+            $postIdS = $base->ID;
+            $title = get_the_title($postIdS);
+            $blurb = $base->post_content;
+          ?>
              <div class="manage-number is-reversed blog-slide-item">
               <div class="image-column two-col-num">
                 <div class="image-nest">
-                  <div class="image-el bg-el no-overlay" data-bg-src="<?php echo "$root/dist/assets/images/AdobeStock_126231368.jpeg" ;?>"></div>
+                  <div class="image-el bg-el no-overlay" data-bg-src="<?php the_field('featured_image', $postIdS) ;?>"></div>
                   <div class="bar-image"></div>
                 </div>
               </div>
               <div class="text-block-column two-col-num">
-                <h3>This is a featured title offering</h3>
+                <h3><?php echo $title; ?></h3>
                 <span class="hr"></span>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ut pariatur provident praesentium neque eveniet?</p>
+                <p><?php echo wp_trim_words( $blurb, 30, '...' ); ?></p>
                 <div class="manage-num-btn read-more">
-                  <a href="#0" class="read-more-cta">Read More <span><svg xmlns="http://www.w3.org/2000/svg" width="7.818" height="9" viewBox="0 0 7.818 9"><path d="M392.548,543l-4.514,7.818h9Z" transform="translate(550.818 -388.034) rotate(90)"/></svg></span></a>
+                  <a href="<?php echo get_the_permalink($postIdS);?>" class="read-more-cta">Read More <span><svg xmlns="http://www.w3.org/2000/svg" width="7.818" height="9" viewBox="0 0 7.818 9"><path d="M392.548,543l-4.514,7.818h9Z" transform="translate(550.818 -388.034) rotate(90)"/></svg></span></a>
                 </div>
               </div>
             </div>
 
-          <?php endfor; ?>
+        <?php endforeach; ?>
         </div>
         <div class="btn-group">
           <button class="next prev">
@@ -85,7 +92,7 @@
         <div class="services-two-col__el has-request">
           <div class="request-box">
             <div class="request-box__inner content-block">
-              <h1><?php the_field('request_box_title'); ?></h1>
+              <h1><?php the_field('request_box_title', $post->ID); ?></h1>
               <div class="hr"></div>
               <p><?php the_field('request_box_blurb'); ?></p>
               <div class="cta-parent-services">
@@ -164,7 +171,7 @@
 <div class="request-app-mobile">
   <div class="cta-parent-mobile">
     <?php $ctaLink = get_field('request_appointment_cta', 'options');?>
-    <a href="<?php echo $ctaLink['url'];?>" class="cta" <?php echo $ctaLink['target'];?>>Request Appointment</a>
+    <a href="<?php echo $ctaLink['url'];?>" class="cta" target="<?php echo $ctaLink['target'];?>"><?php echo $ctaLink['title']; ?></a>
   </div>
 </div>
 <?php get_footer(); ?>
