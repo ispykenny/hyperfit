@@ -13,12 +13,12 @@
 # Issues
 1. ~~Fix slider bubbles on home page.~~
 2. ~~Fix spacing near newsletter section.~~ 
-3. Implement WP Forms into newsletter component.
+3. ~~Implement WP Forms into newsletter component.~~
 4. ~~Implement share to social on blog single.~~
 5. Need higher res images for "Our Practice" page. - Requested.
 6. ~~Fix Nav Bar reponsiveness~~
 
 
 # Revisions
-1. Make 5 components based on true/false to display on the services single page.
+1. ~~Make 5 components based on true/false to display on the services single page.~~
 

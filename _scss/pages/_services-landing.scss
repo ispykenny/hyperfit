@@ -122,3 +122,24 @@
 .featured-offerings {
   padding-top: 4em;
 }
+
+@media(min-width: $bp-sm) {
+  .three-stack {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .card-services {
+      margin-bottom: 6em;
+      margin-top: 0em;
+      width: 31%;
+      margin-right: (6% / 2);
+      &:nth-child(2n) {
+        margin-right: (6% / 2);
+        margin-left: 0;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

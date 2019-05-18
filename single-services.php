@@ -56,6 +56,8 @@
 ?>
 
 
+       
+
 
 <?php endwhile; endif; wp_reset_postdata(); ?>
 
@@ -66,7 +68,7 @@
 
 <div class="request-app-mobile">
   <div class="cta-parent-mobile">
-    <?php $ctaLink = get_field('request_appointment_cta', 'options'); var_dump($ctaLink); ?>
+    <?php $ctaLink = get_field('request_appointment_cta', 'options');?>
     <a href="<?php echo $ctaLink['link'];?>" class="cta" <?php echo $ctaLink['target'];?>>Request Appointment</a>
   </div>
 </div>

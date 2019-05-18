@@ -46,5 +46,6 @@
     </div>
   </div>
   <div class="spacing spacing--lg"></div>
+  <div class="blog-featured-strip"></div>
 </section>
 <?php endforeach; ?>

@@ -1,6 +1,4 @@
 <?php $root = get_template_directory_uri(); ?>
-
-
 <section id="how-it-works">
   <div class="spacing spacing--lg"></div>
   <div class="inner">

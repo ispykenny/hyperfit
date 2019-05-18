@@ -1,6 +1,5 @@
 <?php $root = get_template_directory_uri(); ?>
-<?php $root = get_template_directory_uri(); ?>
-
+<?php $showGrid = get_field('show_icon_grid'); ?>
 
 <section id="features-two-col-services">
   <div class="spacing spacing--lg"></div>
@@ -35,5 +34,27 @@
       <?php endforeach; ?>
    
   </div>
+  
+  <?php if($showGrid) : ?>
+  <div class="spacing spacing--lg"></div>
+  <div class="inner three-stack">
+    <?php 
+      $howWorkGrid = get_field('icon_grid');
+      foreach($howWorkGrid as $theWorkers) :
+    ?>
+    <div class="card-services">
+      <div class="icon-nest">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="#000000" class="nc-icon-wrapper"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></g></svg>
+      </div>
+      <div class="card-services__inner is-center">
+        <h4 class="card-title"><?php echo $theWorkers['title']; ?></h4>
+        <div class="hr"></div>
+        <p><?php echo wp_trim_words( $theWorkers['blurb'], 20, '...' ); ?></p>
+      </div>
+    </div>
+    <?php endforeach; ?>
+  
+  </div>
+      <?php endif; ?>
   <div class="spacing spacing--lg"></div>
 </section>
