@@ -56,12 +56,7 @@
 ?>
 
 
-       
-
-
 <?php endwhile; endif; wp_reset_postdata(); ?>
-
-
 <?php get_template_part('partials/two-col-with-slider'); ?>
 <?php get_template_part('partials/recent-blogs'); ?>
 <?php get_template_part('partials/news-letter'); ?>
