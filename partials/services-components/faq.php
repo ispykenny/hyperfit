@@ -6,7 +6,7 @@
 <section id="item-<?php echo $count; ?>">
 <div class="spacing spacing--md"></div>
   <div class="inner">
-  <div class="has-max is-center content-block">
+  <div class="has-max is-center content-block" style="padding-bottom: 6em;">
       <h1 class="spacing-btn"><?php the_field('faq_title'); ?></h1>
     </div>
     <div class="two-faq-col">
