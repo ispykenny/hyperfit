@@ -111,3 +111,10 @@ section {
 .clear-fix {
   @include clearfix();
 }
+
+.general-content {
+  a {
+    color: #343434;
+    font-weight: 700;
+  }
+}

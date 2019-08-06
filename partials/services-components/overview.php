@@ -15,7 +15,7 @@
 				<h3><?php the_field('overview_headline'); ?></h3>
 				<span class="hr"></span>
 				<?php the_field('two_column_blurb'); ?>
-				<div class="manage-num-btn">
+				<div class="manage-num-btn general-content">
 					<?php the_field('overview_blurb'); ?>
 				</div>
 			</div>
