@@ -21,13 +21,13 @@
 
     &:first-of-type {
       @media(min-width: $bp-md) {
-        width: 40%;
+        width: 30%;
         margin-right: 10%;
       }
     }
     &:last-of-type {
       @media(min-width: $bp-md) {
-        width: 50%;
+        width: 60%;
         margin-left: 0%;
       }
     }
@@ -58,14 +58,14 @@
       &:first-of-type {
         margin-right: 0em;
         @media(min-width: $bp-md) {
-          width: 40%;
+          width: 30%;
           margin-left: 10%;
         }
       }
       &:last-of-type {
         margin-right: 0%;
         @media(min-width: $bp-md) {
-          width: 50%;
+          width: 60%;
         }
       }
     }
