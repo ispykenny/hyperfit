@@ -70,7 +70,7 @@
             <?php get_template_part('dist/assets/svgs/arrow-left'); ?>
           </button>
           <button class="next">
-          <?php get_template_part('dist/assets/svgs/arrow-right'); ?>
+            <?php get_template_part('dist/assets/svgs/arrow-right'); ?>
           </button>
         </div>
       </div>

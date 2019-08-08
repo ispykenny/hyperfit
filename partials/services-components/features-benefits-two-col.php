@@ -10,6 +10,7 @@
     <?php 
       $count = 0;
       $cardAndImage = get_field('card_and_image'); 
+      if($cardAndImage) :
       foreach($cardAndImage as $theValProp) :
         $count++;
         $className = $count % 2 === 0 ? "is-reversed" : '';
@@ -31,7 +32,7 @@
 				</div>
       </div>
 		</div>
-      <?php endforeach; ?>
+      <?php endforeach; endif;?>
    
   </div>
   
