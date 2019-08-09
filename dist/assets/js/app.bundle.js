@@ -15145,11 +15145,13 @@ exports.default = function () {
   var body = document.getElementsByTagName("body")[0];
   var count = 3;
   var sum = 0;
-  var faqCard = void 0;
+  var faqCard = document.querySelectorAll(".faq-card");
   var loadMore = void 0;
   var faqStorage = void 0;
 
-  if (body.classList.contains("single-services")) {
+  console.log(faqCard.length);
+
+  if (faqCard.length >= 1) {
     count = 3;
     sum = 0;
     faqCard = document.querySelectorAll(".faq-card");
@@ -15158,7 +15160,7 @@ exports.default = function () {
   }
 
   var loaderBuild = function loaderBuild() {
-    if (!body.classList.contains("single-services")) return;
+    if (faqCard.length <= 1) return;
     if (faqCard.length <= count) {
       loadMore.style.display = "none";
     }
@@ -15189,7 +15191,8 @@ exports.default = function () {
       loadMore.innerHTML = "All Questions Loaded";
     }
   };
-  if (body.classList.contains("single-services")) {
+  console.log(faqCard.length);
+  if (faqCard.length >= 1) {
     loadMore.addEventListener("click", function (event) {
       return showMoreFaq(event);
     });

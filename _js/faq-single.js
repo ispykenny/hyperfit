@@ -2,11 +2,13 @@ export default function() {
   const body = document.getElementsByTagName("body")[0];
   let count = 3;
   let sum = 0;
-  let faqCard;
+  let faqCard = document.querySelectorAll(".faq-card");
   let loadMore;
   let faqStorage;
 
-  if (body.classList.contains("single-services")) {
+  console.log(faqCard.length)
+
+  if(faqCard.length >= 1) {
     count = 3;
     sum = 0;
     faqCard = document.querySelectorAll(".faq-card");
@@ -15,7 +17,7 @@ export default function() {
   }
 
   const loaderBuild = () => {
-    if (!body.classList.contains("single-services")) return;
+    if (faqCard.length <= 1) return;
     if (faqCard.length <= count) {
       loadMore.style.display = "none";
     }
@@ -41,7 +43,8 @@ export default function() {
       loadMore.innerHTML = "All Questions Loaded";
     }
   };
-  if (body.classList.contains("single-services")) {
+  console.log(faqCard.length)
+  if(faqCard.length >= 1) {
     loadMore.addEventListener("click", event => showMoreFaq(event));
   }
   loaderBuild();
