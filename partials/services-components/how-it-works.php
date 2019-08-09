@@ -1,6 +1,6 @@
 <?php $root = get_template_directory_uri(); ?>
 <section id="how-it-works">
-  <div class="spacing spacing--lg"></div>
+  <div class="spacing spacing--md"></div>
   <div class="inner">
     <div class="has-max is-center content-block" style="padding-bottom: 6em;">
       <h1 class="spacing-btn"><?php the_field('how_it_works_title'); ?></h1>
