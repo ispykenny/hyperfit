@@ -149,3 +149,23 @@
   padding-top: 1em;
   padding-bottom: 2em;
 }
+
+#overview-s {
+  .image-column  {
+    display: none;
+  }
+  h3 {
+    max-width: 500px;
+  }
+}
+
+@media(min-width: $bp-md) {
+  #overview-s {
+    .image-column  {
+      display: block;
+    }
+    h3 {
+      max-width: 100%;
+    }
+  }
+}
