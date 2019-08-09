@@ -2,10 +2,10 @@
 <?php $showGrid = get_field('show_icon_grid'); ?>
 
 <section id="features-two-col-services">
-  <div class="spacing spacing--lg"></div>
+  <div class="spacing spacing--md"></div>
   <div class="inner">
     <div class="has-max is-center content-block">
-      <h1 class="spacing-btn"><?php the_field('features_and_benefits_title'); ?></h1>
+      <h2 class="spacing-btn"><?php the_field('features_and_benefits_title'); ?></h2>
     </div>
     <?php 
       $count = 0;
@@ -50,7 +50,8 @@
       <div class="card-services__inner is-center">
         <h4 class="card-title"><?php echo $theWorkers['title']; ?></h4>
         <div class="hr"></div>
-        <p><?php echo wp_trim_words( $theWorkers['blurb'], 20, '...' ); ?></p>
+
+        <p><?php echo $theWorkers['blurb']; ?></p>
       </div>
     </div>
     <?php endforeach; ?>

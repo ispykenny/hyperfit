@@ -2,8 +2,8 @@
 <section id="how-it-works">
   <div class="spacing spacing--md"></div>
   <div class="inner">
-    <div class="has-max is-center content-block" style="padding-bottom: 6em;">
-      <h1 class="spacing-btn"><?php the_field('how_it_works_title'); ?></h1>
+    <div class="has-max is-center content-block">
+      <h2 class="spacing-btn"><?php the_field('how_it_works_title'); ?></h2>
     </div>
     <div class="four-column-icon-section on-light">
       <?php 
@@ -20,7 +20,7 @@
 
           <div class="icon-section-element__inner general-content">
             <p><?php echo $theWorks['title']; ?></p>
-            <?php echo $theWorks['blurb']; ?>
+            <p><?php echo $theWorks['blurb']; ?></p>
           </div>
 
         </div>

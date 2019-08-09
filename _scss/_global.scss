@@ -117,3 +117,9 @@ section {
     color: $themegreen;
   }
 }
+
+.card-services a {
+  @extend .cta;
+  margin-top: 1.2em;
+  display: inline-block;
+}
