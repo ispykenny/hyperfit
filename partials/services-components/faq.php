@@ -42,6 +42,9 @@
           </div>
         </div>
         <?php endforeach; ?>
+        <a class="primary-cta cta load-more-faq" href="#0">
+            Load More Faqs
+        </a>
       </div>
     </div>
   </div>

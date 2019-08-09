@@ -93,29 +93,37 @@
   
   .four-column-icon-section {
     display: flex;
+    overflow: hidden;
   }
   
   .icon-section-element {
     display: flex;
     text-align: left;
-    width: 48%;
+    width: 47.5%;
     margin-left: 0; 
     margin-right: 0;
     margin: 0;
     margin-bottom: 5em;
     &:nth-child(2n) {
-      margin-left: 4%;
+      width: 47.5%;
+      margin-left: 5%;
+    }
+    &__inner {
+      width: 30px;
+      margin-right: 50px;
     }
     &__inner:nth-child(2) {
-      margin-left: 25px;
+      width: calc(100% - 80px);
     }
      &:nth-child(3) {
       margin-bottom: 0em;
     }
   }
   .icon-section-element__inner {
+
     h5, p {
       max-width: 450px;
+      width: 100%;
       margin: 0;
     }
   }

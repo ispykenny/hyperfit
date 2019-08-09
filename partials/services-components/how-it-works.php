@@ -11,15 +11,18 @@
         foreach($works as $theWorks) : 
       ?>
         <div class="icon-section-element">
+
           <div class="icon-section-element__inner">
             <div class="four-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="#000000" class="nc-icon-wrapper"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></g></svg>
             </div>
           </div>
+
           <div class="icon-section-element__inner general-content">
             <p><?php echo $theWorks['title']; ?></p>
             <?php echo $theWorks['blurb']; ?>
           </div>
+
         </div>
         <?php endforeach; ?>
     </div>

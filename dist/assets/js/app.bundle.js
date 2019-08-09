@@ -12312,6 +12312,10 @@ var _util = __webpack_require__(28);
 
 var _util2 = _interopRequireDefault(_util);
 
+var _faqSingle = __webpack_require__(29);
+
+var _faqSingle2 = _interopRequireDefault(_faqSingle);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _jquery2.default;
@@ -12342,6 +12346,8 @@ window.jQuery = _jquery2.default;
 (0, _servicesPage2.default)();
 
 (0, _util2.default)();
+
+(0, _faqSingle2.default)();
 
 /***/ }),
 /* 7 */
@@ -15122,6 +15128,73 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function () {
   // ready for code
+};
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var body = document.getElementsByTagName("body")[0];
+  var count = 3;
+  var sum = 0;
+  var faqCard = void 0;
+  var loadMore = void 0;
+  var faqStorage = void 0;
+
+  if (body.classList.contains("single-services")) {
+    count = 3;
+    sum = 0;
+    faqCard = document.querySelectorAll(".faq-card");
+    loadMore = document.querySelector(".load-more-faq");
+    faqStorage = [];
+  }
+
+  var loaderBuild = function loaderBuild() {
+    if (!body.classList.contains("single-services")) return;
+    if (faqCard.length <= count) {
+      loadMore.style.display = "none";
+    }
+
+    var _loop = function _loop(i) {
+      if (count <= i) {
+        faqStorage.push(faqCard[i]);
+        setTimeout(function () {
+          faqCard[i].style.display = "none";
+        });
+      }
+    };
+
+    for (var i = 0; i < faqCard.length; i++) {
+      _loop(i);
+    }
+  };
+
+  var showMoreFaq = function showMoreFaq(event) {
+    event.preventDefault();
+    sum = sum + 3;
+    for (var i = 0; i < faqStorage.length; i++) {
+      if (i < sum) {
+        faqStorage[i].style.display = "block";
+      }
+    }
+    if (sum >= faqStorage.length) {
+      loadMore.innerHTML = "All Questions Loaded";
+    }
+  };
+  if (body.classList.contains("single-services")) {
+    loadMore.addEventListener("click", function (event) {
+      return showMoreFaq(event);
+    });
+  }
+  loaderBuild();
 };
 
 /***/ })

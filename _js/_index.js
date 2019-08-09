@@ -35,4 +35,7 @@ import services from './services-page';
 services();
 
 import util from './_util';
-util()
+util();
+
+import faqLoader from './faq-single';
+faqLoader()
