@@ -131,4 +131,11 @@ section {
   .menu-item-has-children {
     display: none;
   }
+
+  a {
+    color: $themegreen;
+  }
+  .sub-menu {
+    padding-left: 220px !important;
+  }
 }

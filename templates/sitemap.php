@@ -8,6 +8,7 @@
   <div class="inner">
     <div class="spacing spacing--lg"></div>
     <div class="spacing spacing--lg"></div>
+      <h1>Sitemap</h1>
       <ul class="sitemap"></ul>
     <div class="spacing spacing--lg"></div>
   </div>
