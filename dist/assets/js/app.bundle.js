@@ -12415,12 +12415,18 @@ exports.default = function () {
   var $dropDownEl = $('.menu-item-has-children');
   var $childNav = $('.sub-menu');
   var $speed = 150;
+  var $siteMap = $('.sitemap');
 
   var modifyDropDownNav = function modifyDropDownNav() {
     $dropDownEl.each(function (i, $element) {
       $($element).find('a').first().append('\n        <span class="drop-crt">\n          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 6 7"><path d="M391.545,543l-3.511,6h7Z" transform="translate(549 -388.034) rotate(90)" fill="#87b840"></path></svg>\n        </span>\n      ');
     });
   };
+
+  if ($siteMap.length >= 1) {
+    var $newNav = $nav.clone();
+    $siteMap.append($newNav.find('li'));
+  }
 
   $(window).on('load', modifyDropDownNav);
 

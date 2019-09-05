@@ -9,6 +9,10 @@ export default function() {
   let $dropDownEl = $('.menu-item-has-children');
   let $childNav = $('.sub-menu');
   let $speed = 150;
+  let $siteMap = $('.sitemap');
+
+
+  
 
   let modifyDropDownNav = () => {
     $dropDownEl.each((i, $element) => {
@@ -18,6 +22,12 @@ export default function() {
         </span>
       `)
     })
+  }
+
+
+  if($siteMap.length >= 1) {
+    let $newNav = $nav.clone();
+    $siteMap.append($newNav.find('li'))
   }
 
 

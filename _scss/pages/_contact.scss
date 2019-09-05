@@ -4,6 +4,32 @@
   }
 }
 
+.map {
+  padding: 2em 0em;
+  iframe {
+    width: 100%;
+  }
+}
+
+.map-desktop {
+  display: none;
+}
+.map-mobile {
+  display: block;
+}
+
+
+@media(min-width: $bp-lg) {
+  .map-mobile {
+    display: none !important;
+  }
+  .map-desktop {
+    display: block;
+  }
+}
+
+
+
 .two-col-contact__el {
   max-width: 600px;
   margin: auto;
@@ -68,12 +94,18 @@
 }
 
 
+
 // footer section
 .contact-logo {
   max-width: 200px;
   width: 100%;
   margin: auto;
   margin-bottom: 2em;
+
+  img {
+    width: 100%;
+  }
+
 }
 
 .contact-form {
@@ -116,3 +148,10 @@
   }
 }
 
+
+
+article {
+  a {
+    color: $themegreen;
+  }
+}

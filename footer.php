@@ -86,7 +86,11 @@
 
   <div class="legal">
     <div class="inner">
-      Privacy Policy
+      <ul class="footer-flex">
+        <li><a href="<?php echo site_url('privacy-policy'); ?>">Privacy Policy</a></li>
+        <li><a href="<?php echo site_url('ada'); ?>">ADA</a></li>
+        <li><a href="<?php echo site_url('sitemap'); ?>">Site Map</a></li>
+      </ul>
     </div>
   </div>
 </footer>
