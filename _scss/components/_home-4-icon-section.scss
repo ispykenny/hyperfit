@@ -45,6 +45,10 @@
     margin-top: 12px;
     margin-bottom: 0em;
   }
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
    &:nth-child(4) {
     margin-bottom: 0em;
   }
@@ -104,6 +108,10 @@
     margin-right: 0;
     margin: 0;
     margin-bottom: 5em;
+    p {
+      margin-left: 0;
+      margin-right: 0;
+    }
     &:nth-child(2n) {
       width: 47.5%;
       margin-left: 5%;
