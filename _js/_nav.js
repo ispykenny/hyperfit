@@ -1,5 +1,4 @@
 export default function() {
-  let $nav = $('nav');
   let $body = $('body')
   let $downDown = $('.dropdown-trigger');
   let downDownShowing = false;
@@ -9,9 +8,6 @@ export default function() {
   let $dropDownEl = $('.menu-item-has-children');
   let $childNav = $('.sub-menu');
   let $speed = 150;
-  let $siteMap = $('.sitemap');
-
-
   
 
   let modifyDropDownNav = () => {
@@ -24,11 +20,6 @@ export default function() {
     })
   }
 
-
-  if($siteMap.length >= 1) {
-    let $newNav = $nav.clone();
-    $siteMap.append($newNav.find('li'))
-  }
 
 
   $(window).on('load', modifyDropDownNav);

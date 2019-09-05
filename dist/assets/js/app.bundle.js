@@ -12316,6 +12316,10 @@ var _faqSingle = __webpack_require__(29);
 
 var _faqSingle2 = _interopRequireDefault(_faqSingle);
 
+var _sitemap = __webpack_require__(30);
+
+var _sitemap2 = _interopRequireDefault(_sitemap);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = _jquery2.default;
@@ -12348,6 +12352,8 @@ window.jQuery = _jquery2.default;
 (0, _util2.default)();
 
 (0, _faqSingle2.default)();
+
+(0, _sitemap2.default)();
 
 /***/ }),
 /* 7 */
@@ -12405,7 +12411,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-  var $nav = $('nav');
   var $body = $('body');
   var $downDown = $('.dropdown-trigger');
   var downDownShowing = false;
@@ -12415,18 +12420,12 @@ exports.default = function () {
   var $dropDownEl = $('.menu-item-has-children');
   var $childNav = $('.sub-menu');
   var $speed = 150;
-  var $siteMap = $('.sitemap');
 
   var modifyDropDownNav = function modifyDropDownNav() {
     $dropDownEl.each(function (i, $element) {
       $($element).find('a').first().append('\n        <span class="drop-crt">\n          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 6 7"><path d="M391.545,543l-3.511,6h7Z" transform="translate(549 -388.034) rotate(90)" fill="#87b840"></path></svg>\n        </span>\n      ');
     });
   };
-
-  if ($siteMap.length >= 1) {
-    var $newNav = $nav.clone();
-    $siteMap.append($newNav.find('li'));
-  }
 
   $(window).on('load', modifyDropDownNav);
 
@@ -15204,6 +15203,27 @@ exports.default = function () {
     });
   }
   loaderBuild();
+};
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  var $nav = $('nav');
+  var $siteMap = $('.sitemap');
+
+  if ($siteMap.length >= 1) {
+    var $newNav = $nav.clone();
+    $siteMap.append($newNav.find('li'));
+  }
 };
 
 /***/ })

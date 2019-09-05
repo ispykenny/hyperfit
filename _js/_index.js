@@ -39,3 +39,6 @@ util();
 
 import faqLoader from './faq-single';
 faqLoader()
+
+import sitemap from './sitemap';
+sitemap();
