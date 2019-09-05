@@ -12411,6 +12411,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
+  var $nav = $('nav');
   var $body = $('body');
   var $downDown = $('.dropdown-trigger');
   var downDownShowing = false;

@@ -1,4 +1,5 @@
 export default function() {
+  let $nav = $('nav');
   let $body = $('body')
   let $downDown = $('.dropdown-trigger');
   let downDownShowing = false;
@@ -19,7 +20,6 @@ export default function() {
       `)
     })
   }
-
 
 
   $(window).on('load', modifyDropDownNav);
