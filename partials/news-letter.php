@@ -21,13 +21,11 @@
 					</ul>		
 				</div>
 				<div class="form-nest__el form-el">
-					<form action="">
-						<div class="form-input">
-							<input type="email" placeholder="Your Email Address" required>
-							<input type="submit" value="Subscribe">
-						</div>
-					</form>
+					<?php echo do_shortcode('[wpforms id="770" title="false" description="false"]'); ?>
 				</div>
+			</div>
+			<div class="subscribe-blurb">
+				<p><?php the_field('newsletter_blurb', 'options'); ?></p>
 			</div>
 		</div>
 	</div>
