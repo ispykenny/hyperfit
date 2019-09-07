@@ -10,7 +10,6 @@
 	<title>HyperFit MD <?php wp_title('- '); ?></title>
 	<link rel="stylesheet" href="<?php echo "$root/dist/assets/css/style.css?=" ?>">
 	<meta name="viewport" content="Width=device-width, initial-scale=1, user-scalable=no">
-  <script src="https://use.fontawesome.com/1eda73ce4d.js"></script>
   <link rel="icon" type="image/png" href="<?php echo "$root/dist/assets/images/favicon.png"; ?>">
 	<?php wp_head(); ?>
 </head>
