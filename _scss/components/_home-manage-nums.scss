@@ -4,6 +4,11 @@
 
 .two-col-num {
   width: 100%;
+  text-align: center;
+
+  @media(min-width: $bp-md) {
+    text-align: left;
+  }
   &:nth-child(2) {
     margin: auto;
     margin-top: 2em;
