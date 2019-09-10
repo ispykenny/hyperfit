@@ -66,7 +66,7 @@
         <span class="mico-hr"></span>
         <h5 class="site-cats">Contact us</h5>
         <div class="footer-cta">
-          <a href="" class="cta">
+          <a href="<?php echo site_url('contact-us'); ?>" class="cta">
             <span class="text">
               <span class="text-el text-current">
                 Contact Us
@@ -77,7 +77,7 @@
             </span>
           </a>
          <div>
-          <a href="<?php the_permalink();?>" class="read-more-cta">Request Appointment </a>
+          <a href="<?php the_field('request_appointment_cta', 'options');?>" class="read-more-cta">Request Appointment </a>
          </div>
         </div>
       </div>
