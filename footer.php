@@ -78,7 +78,7 @@
           </a>
          <div>
          <?php $requestAppt = get_field('request_appointment_cta', 'options'); ?>
-          <a href="<?php echo $requestAppt['link'];?>" class="read-more-cta">Request Appointment </a>
+          <a href="<?php echo $requestAppt['url'];?>" class="read-more-cta">Request Appointment </a>
          </div>
         </div>
       </div>
