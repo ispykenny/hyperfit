@@ -77,7 +77,8 @@
             </span>
           </a>
          <div>
-          <a href="<?php the_field('request_appointment_cta', 'options');?>" class="read-more-cta">Request Appointment </a>
+         <?php $requestAppt = get_field('request_appointment_cta', 'options'); ?>
+          <a href="<?php echo $requestAppt['link'];?>" class="read-more-cta">Request Appointment </a>
          </div>
         </div>
       </div>
