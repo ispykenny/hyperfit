@@ -19,7 +19,7 @@
       <div class="pre-nav-section">
         <div class="contact-flex">
           <div class="contact-flex__el location">
-            <a href="<?php the_field('address_link', 'options');?>">
+            <a href="<?php the_field('address_link', 'options');?>" target="_BLANK">
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
                 <g id="pin_drop" transform="translate(-609.5 -3209.5)">
