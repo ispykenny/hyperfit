@@ -76,7 +76,7 @@
   </div>
   <div class="inner main-nav">
     <div class="nav-section">
-      <a href="<?php echo site_url('');?>" class="logo">
+      <a href="<?php echo site_url('');?>" class="logo" id="logo-nav">
         <img src="<?php the_field('logo', 'options') ?>" alt="Hyperfit MD Logo">
       </a>
       <button class="mt-trigger">

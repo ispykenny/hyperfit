@@ -36,6 +36,8 @@
 	<div class="stripe"></div>
 </header>
 
+
+
 <section class="card-slider">
 <div class="spacing spacing--lg"></div>
 	<div class="inner">
