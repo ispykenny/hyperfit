@@ -46,7 +46,7 @@
 			<div class="has-max is-center content-block">
 				<h1><?php the_field('video_title'); ?></h1>
 				<div class="video-element">
-						<video src="<?php the_field('video'); ?>" controls></video>
+						<video src="<?php the_field('video'); ?>" controls poster="https://hyperfitmd.com/wp-content/uploads/2019/05/age-management-hyperfit-md.jpg"></video>
 				</div>
 			</div>
 		</div>
