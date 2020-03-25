@@ -1,5 +1,5 @@
 export default function() {
-  let $navLinks = $('a[href*="localhost"], a[href*="ispykenny.com"], a[href*="hyperfitmd.com"] ');
+  let $navLinks = $('a[href*="localhost"], a[href*="ispykenny.com"], a[href*="hyperfitmd.com"], a[href*="hyperfit"]');
 
   const routePage = event => {
     event.preventDefault();

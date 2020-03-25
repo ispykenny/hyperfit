@@ -6,8 +6,6 @@ export default function() {
   let loadMore;
   let faqStorage;
 
-  console.log(faqCard.length)
-
   if(faqCard.length >= 1) {
     count = 3;
     sum = 0;
@@ -43,9 +41,10 @@ export default function() {
       loadMore.innerHTML = "All Questions Loaded";
     }
   };
-  console.log(faqCard.length)
+
   if(faqCard.length >= 1) {
     loadMore.addEventListener("click", event => showMoreFaq(event));
   }
+
   loaderBuild();
 }

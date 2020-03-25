@@ -10,7 +10,7 @@
 				<div class="hero-anime">
 					<h1><?php the_field('hero_title'); ?></h1>
 				</div>
-				<div class="hero-anime"><p><?php the_field('hero_blurb'); ?></p></div>
+				<div class="hero-anime hyper_content"><p><?php the_field('hero_blurb'); ?></p></div>
 				<div class="cta-el hero-anime">
 					<?php $primaryLink = get_field('hero_cta_primary'); ?>
 					<a href="<?php echo $primaryLink['url'];?>" class="cta" target="<?php echo $primaryLink['target'];?>">
@@ -36,7 +36,22 @@
 	<div class="stripe"></div>
 </header>
 
-
+<?php
+	$hasVideo = get_field('has_video_section');
+	if($hasVideo) {
+?>
+	<section>
+		<div class="spacing spacing--lg"></div>
+		<div class="inner">
+			<div class="has-max is-center content-block">
+				<h1><?php the_field('video_title'); ?></h1>
+				<div class="video-element">
+						<video src="<?php the_field('video'); ?>" controls></video>
+				</div>
+			</div>
+		</div>
+	</section>
+<?php } ?>
 
 <section class="card-slider">
 <div class="spacing spacing--lg"></div>
@@ -45,7 +60,11 @@
 			<h3><?php the_field('second_section_subtitle'); ?></h3>
 			<h1><?php the_field('second_section_title'); ?></h1>
 			<span class="hr"></span>
-			<?php the_field('second_section_blurb') ?>
+
+			<div class="hyper_content">
+				<?php the_field('second_section_blurb') ?>
+			</div>
+			
 		</div>
 
 		
