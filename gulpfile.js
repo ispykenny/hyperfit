@@ -85,12 +85,10 @@ gulp.task('minify-css', () => {
 
 gulp.task('compress', function (cb) {
   pump([
-        gulp.src('dist/assets/js/app.bundle.js'),
-        uglify(),
-        gulp.dest('dist/assets/js/')
-    ],
-    cb
-  );
+      gulp.src('dist/assets/js/app.bundle.js'),
+      uglify(),
+      gulp.dest('dist/assets/js/')
+    ], cb );
 });
 
 
@@ -101,5 +99,5 @@ gulp.task('build', buildSite);
 
 gulp.task('default', taskDefaults, () => {
   gulp.watch(PATHS.scss, ['scss']);
-   gulp.watch(PATHS.sitefiles).on('change', browsersync.reload);
+  gulp.watch(PATHS.sitefiles).on('change', browsersync.reload);
 });
