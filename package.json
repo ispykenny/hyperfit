@@ -20,7 +20,7 @@
     "del": "^3.0.0",
     "dotenv": "^5.0.0",
     "flickity": "^2.1.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
